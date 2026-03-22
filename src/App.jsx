@@ -4,11 +4,18 @@ import Home from './pages/Home';
 import Login from './components/Login';
 
 function App() {
+
+  const routes = [
+    { path: "/", element: <Home /> },
+    { path: "/login", element: <Login /> },
+  ];
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        {routes.map((r, i) => (
+          <Route key={i} path={r.path} element={r.element} />
+        ))}
       </Routes>
     </BrowserRouter>
   );
