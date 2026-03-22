@@ -7,7 +7,7 @@ function App() {
 
   const routes = [
     { path: "/", element: <Home /> },
-    { path: "/login", element: <Login /> },
+    { path: "/login", element: <Login /> }
   ];
 
   return (
