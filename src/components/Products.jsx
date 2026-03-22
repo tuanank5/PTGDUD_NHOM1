@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { getProducts, addProduct, deleteProduct } from "../api/productsApi";
+import { getProducts, addProduct, deleteProduct } from "../api/productsAPI";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
 
-  // form state
+  const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
@@ -18,7 +18,6 @@ export default function Products() {
     setProducts(data);
   };
 
-  // xử lý chọn file ảnh
   const handleImageChange = (e) => {
     const file = e.target.files[0];
 
@@ -27,26 +26,26 @@ export default function Products() {
     const reader = new FileReader();
 
     reader.onloadend = () => {
-      setImage(reader.result); // base64
+      setImage(reader.result);
     };
 
     reader.readAsDataURL(file);
   };
 
-  // thêm sản phẩm
   const handleAdd = async () => {
-    if (!name || !price || !image) {
-      alert("Vui lòng nhập đầy đủ");
+    if ( !name || !price || !image) {
+      alert("Vui lòng nhập đầy đủ thông tin sản phẩm");
       return;
     }
 
     await addProduct({
+      // id,
       name,
       price: Number(price),
       image
     });
 
-    // reset form
+    setId("");
     setName("");
     setPrice("");
     setImage("");
@@ -54,7 +53,6 @@ export default function Products() {
     loadProducts();
   };
 
-  // xoá
   const handleDelete = async (id) => {
     await deleteProduct(id);
     loadProducts();
@@ -62,32 +60,30 @@ export default function Products() {
 
   return (
     <div>
-      <h2>Danh sách sản phẩm</h2>
-
-      {/* FORM */}
-      <div style={{ marginBottom: "20px" }}>
+      <div>
+        <h2>Quản lý sản phẩm</h2>
         <input
           type="text"
           placeholder="Tên sản phẩm"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-
+        <br />
         <input
           type="number"
           placeholder="Giá"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         />
-
+        <br />
         <input type="file" onChange={handleImageChange} />
-
+        <br />
         <button onClick={handleAdd}>Thêm sản phẩm</button>
       </div>
 
-      {/* LIST */}
+      <h2>Danh sách sản phẩm</h2>
       {products.map((p) => (
-        <div key={p.id} style={{ margin: "10px 0" }}>
+        <div key={p.id}>
           <h3>{p.name}</h3>
           <p>{p.price}k</p>
           <img src={p.image} width="150" />
