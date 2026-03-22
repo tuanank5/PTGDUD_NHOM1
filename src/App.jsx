@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Login from './components/Login';
+import Footer from './components/Footer'; 
 
 function App() {
 
@@ -12,11 +13,17 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
-        {routes.map((r, i) => (
-          <Route key={i} path={r.path} element={r.element} />
-        ))}
-      </Routes>
+      <div className="app-container">
+        <div className="main-content">
+          <Routes>
+            {routes.map((r) => (
+              <Route key={r.path} path={r.path} element={r.element} />
+            ))}
+          </Routes>
+        </div>
+        <Footer />
+        
+      </div>
     </BrowserRouter>
   );
 }

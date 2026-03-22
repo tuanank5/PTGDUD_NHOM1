@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+.footer {
+  background-color: #000000;
+  color: #a0a0a0;
+  padding: 60px 0 20px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.footer-container {
+  max-width: 1400px; /* Tăng độ rộng để dàn hàng ngang */
+  margin: 0 auto;
+  display: grid;
+  /* Cột 1 chiếm 3 phần diện tích, các cột còn lại 1 phần */
+  grid-template-columns: 3fr 1.2fr 1.2fr 1.2fr; 
+  gap: 30px;
+  padding: 0 40px;
+}
+
+/* Lệnh cấm xuống dòng cho các dòng chữ dài */
+.no-wrap {
+  white-space: nowrap;
+}
+
+.footer-logo {
+  color: #fff;
+  font-size: 38px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 8px;
+}
+
+.slogan {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #444;
+  margin-bottom: 25px;
+  letter-spacing: 3px;
+}
+
+.brand-info h4 {
+  color: #fff;
+  font-size: 14px;
+  margin: 15px 0;
+}
+
+/* Tiêu đề các cột nhỏ */
+.footer-col h3 {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+  white-space: nowrap;
+}
+
+.footer-col h3::after {
+  content: "";
+  position: absolute; left: 0; bottom: 0;
+  width: 30px; height: 1px;
+  background-color: #444;
+}
+
+/* Links & Icons */
+.footer-links, .social-links { list-style: none; padding: 0; }
+
+.footer-links li, .social-links li {
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  padding-bottom: 6px;
+}
+
+.footer-links a, .social-links a {
+  color: #888;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.footer-links a:hover, .social-links a:hover {
+  color: #fff;
+  transform: translateX(5px);
+}
+
+.custom-icon {
+  width: 18px; height: 18px;
+  margin-right: 12px;
+  object-fit: contain;
+}
+
+/* Hotline & Badge */
+.main-hotline {
+  color: #e63946;
+  font-weight: bold;
+}
+
+.main-hotline span { font-size: 16px; }
+
+.white-text { color: #fff; }
+
+.bct-badge img {
+  width: 140px;
+  margin-top: 20px;
+  filter: grayscale(1); /* Làm logo BCT thành đen trắng cho sang */
+}
+
+.bct-badge img:hover { filter: grayscale(0); }
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  border-top: 1px solid #111;
+  padding-top: 20px;
+  font-size: 11px;
+  color: #333;
+}
+
+/* Responsive cho Mobile */
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .no-wrap { white-space: normal; } /* Mobile thì cho xuống dòng lại */
+}
