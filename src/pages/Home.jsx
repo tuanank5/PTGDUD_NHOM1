@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Products from "../components/Products";
 import Menu from "../components/Menu";
 
+
 export default function Home() {
     const navigate = useNavigate();
 
