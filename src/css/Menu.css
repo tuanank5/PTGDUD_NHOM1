@@ -1,0 +1,29 @@
+.Menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #f5f5f5;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.menu li {
+  cursor: pointer;
+  color: #333;
+  transition: 0.3s;
+}
+
+.menu li:hover {
+  color: #e60023;
+}

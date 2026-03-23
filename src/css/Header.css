@@ -1,0 +1,54 @@
+.header-top {
+  background: #333;
+  color: #fff;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-box {
+  display: flex;
+}
+
+.search-box select {
+  padding: 5px;
+}
+
+.search-box input {
+  padding: 5px;
+}
+
+.search-box button {
+  background: red;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-user {
+  cursor: pointer;
+}
+
+.icon-cart {
+  cursor: pointer;
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 2px 5px;
+}
