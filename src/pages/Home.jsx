@@ -1,20 +1,38 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Header from "../components/Header";
-import Products from "../components/Products";
 import Menu from "../components/Menu";
-
+import ProductList from "../components/ProductList";
+import ProductForm from "../components/ProductForm";
+import { getProducts } from "../api/productsAPI";
 
 export default function Home() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    return (
-        <div>
-            <Header />
-            <Menu />
-            <button onClick={() => navigate("/login")}>
-                Login
-            </button>
-            <Products />
-        </div>
-    )
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getProducts().then(setProducts);
+  }, []);
+
+  const handleAdd = (newProduct) => {
+    setProducts([...products, newProduct]);
+  };
+
+  return (
+    <div>
+      <Header />
+      <Menu />
+
+      <button onClick={() => navigate("/login")}>
+        Login
+      </button>
+
+      {/* FORM */}
+      <ProductForm onAdd={handleAdd} />
+
+      {/* LIST */}
+      <ProductList products={products} />
+    </div>
+  );
 }
