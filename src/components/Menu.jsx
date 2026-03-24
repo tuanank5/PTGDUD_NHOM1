@@ -5,7 +5,7 @@ export default function Menu() {
     <div className="Menu">
       {/* Logo */}
       <div className="logo">
-        <img src="/image/logo.jpg" alt="logo" />
+        <img src="/images/logo.jpg" alt="logo" />
       </div>
 
       {/* Menu */}
