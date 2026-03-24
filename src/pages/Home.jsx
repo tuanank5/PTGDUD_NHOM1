@@ -21,7 +21,7 @@ export default function Home() {
       <Menu />
 
       <button onClick={() => navigate("/login")}>
-        Login
+        Đăng nhập
       </button>
 
       <button onClick={() => navigate("/productForm")}>

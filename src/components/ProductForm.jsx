@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { getProducts, addProduct } from "../api/productsAPI";
+import { getProducts, addProduct, updateProduct, deleteProduct} from "../api/productsAPI";
 
 export default function ProductForm() {
-  const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [quantity, setQuantity] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
+  const [id, setId] = useState(null);
 
   const [products, setProducts] = useState([]);
 
@@ -26,27 +26,42 @@ export default function ProductForm() {
       image,
     };
 
-    await addProduct(newProduct);
+    if (id) {
+      const updated = await updateProduct(id, newProduct);
+
+      setProducts(prev =>
+        prev.map(p => (p.id === id ? updated : p))
+      );
+    } else {
+      const added = await addProduct(newProduct);
+
+      setProducts(prev => [...prev, added]);
+    }
 
     setName("");
     setPrice("");
     setQuantity("");
     setCategory("");
     setImage("");
+    setId(null);
   };
 
-  const handleEdit = (p) => {
+  const handleUpdate = (p) => {
     setName(p.name);
     setPrice(p.price);
     setQuantity(p.quantity);
     setCategory(p.category);
     setImage(p.image);
-    setEditingId(p.id);
+    setId(p.id);
   };
 
-  const handleDelete = async () => {
+  const handleDelete = async (id) => {
+    const confirmDelete = window.confirm("Bạn có chắc muốn xóa không?");
+    if (!confirmDelete) return;
 
-  }
+    await deleteProduct(id);
+    setProducts(prev => prev.filter(p => p.id !== id));
+  };
 
   return (
     <div style={{ padding: 20 }}>
@@ -85,7 +100,6 @@ export default function ProductForm() {
       <input 
         type="file" 
         accept="image/*"
-        value={image}
         onChange={(e) => {
           const file = e.target.files[0];
           if (!file) return;
@@ -101,7 +115,7 @@ export default function ProductForm() {
       />
       <br />
       <br />
-      <button onClick={handleSubmit}>Thêm</button>
+      <button onClick={handleSubmit}>{id ? "Cập nhật" : "Thêm"}</button>
 
       <hr />
       <table border="1" cellPadding="10" style={{ marginTop: 20 }}>
@@ -130,10 +144,10 @@ export default function ProductForm() {
               </td>
               
               <td>
-                <button onClick={(p.id) => {}}>
+                <button onClick={() => handleUpdate(p)}>
                   Cập nhật
                 </button>
-                <button style={{marginLeft: "10px"}} onClick={() => {}}>
+                <button style={{marginLeft: "10px"}} onClick={() => handleDelete(p.id)}>
                   Xóa
                 </button>
               </td>
