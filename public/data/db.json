@@ -9,7 +9,7 @@
   "products": [
     {
       "id": 1,
-      "name": "Balo du lich 1",
+      "name": "Balo du lịch 1",
       "price": 500000,
       "quantity": 10,
       "category": "dulich",
@@ -17,7 +17,7 @@
     },
     {
       "id": 2,
-      "name": "Balo du lich 2",
+      "name": "Balo du lịch 2",
       "price": 520000,
       "quantity": 8,
       "category": "dulich",
@@ -25,7 +25,7 @@
     },
     {
       "id": 3,
-      "name": "Balo du lich 3",
+      "name": "Balo du lịch 3",
       "price": 480000,
       "quantity": 12,
       "category": "dulich",
@@ -33,7 +33,7 @@
     },
     {
       "id": 4,
-      "name": "Balo du lich 4",
+      "name": "Balo du lịch 4",
       "price": 510000,
       "quantity": 9,
       "category": "dulich",
@@ -41,7 +41,7 @@
     },
     {
       "id": 5,
-      "name": "Balo du lich 5",
+      "name": "Balo du lịch 5",
       "price": 530000,
       "quantity": 7,
       "category": "dulich",
@@ -49,7 +49,7 @@
     },
     {
       "id": 6,
-      "name": "Balo du lich 6",
+      "name": "Balo du lịch 6",
       "price": 550000,
       "quantity": 6,
       "category": "dulich",
@@ -57,7 +57,7 @@
     },
     {
       "id": 7,
-      "name": "Balo du lich 7",
+      "name": "Balo du lịch 7",
       "price": 490000,
       "quantity": 11,
       "category": "dulich",
@@ -65,7 +65,7 @@
     },
     {
       "id": 8,
-      "name": "Balo du lich 8",
+      "name": "Balo du lịch 8",
       "price": 600000,
       "quantity": 5,
       "category": "dulich",
@@ -73,7 +73,7 @@
     },
     {
       "id": 9,
-      "name": "Balo du lich 9",
+      "name": "Balo du lịch 9",
       "price": 520000,
       "quantity": 8,
       "category": "dulich",
@@ -81,7 +81,7 @@
     },
     {
       "id": 10,
-      "name": "Balo du lich 10",
+      "name": "Balo du lịch 10",
       "price": 570000,
       "quantity": 6,
       "category": "dulich",
@@ -89,7 +89,7 @@
     },
     {
       "id": 11,
-      "name": "Balo du lich 11",
+      "name": "Balo du lịch 11",
       "price": 510000,
       "quantity": 10,
       "category": "dulich",
@@ -97,7 +97,7 @@
     },
     {
       "id": 12,
-      "name": "Balo du lich 12",
+      "name": "Balo du lịch 12",
       "price": 530000,
       "quantity": 9,
       "category": "dulich",
@@ -105,7 +105,7 @@
     },
     {
       "id": 13,
-      "name": "Balo du lich 13",
+      "name": "Balo du lịch 13",
       "price": 550000,
       "quantity": 7,
       "category": "dulich",
@@ -113,7 +113,7 @@
     },
     {
       "id": 14,
-      "name": "Balo du lich 14",
+      "name": "Balo du lịch 14",
       "price": 580000,
       "quantity": 6,
       "category": "dulich",
@@ -121,7 +121,7 @@
     },
     {
       "id": 15,
-      "name": "Balo du lich 15",
+      "name": "Balo du lịch 15",
       "price": 600000,
       "quantity": 5,
       "category": "dulich",
@@ -129,7 +129,7 @@
     },
     {
       "id": 16,
-      "name": "Tui nam 1",
+      "name": "Túi nam 1",
       "price": 400000,
       "quantity": 10,
       "category": "nam",
@@ -137,7 +137,7 @@
     },
     {
       "id": 17,
-      "name": "Tui nam 2",
+      "name": "Túi nam 2",
       "price": 420000,
       "quantity": 9,
       "category": "nam",
@@ -145,7 +145,7 @@
     },
     {
       "id": 18,
-      "name": "Tui nam 3",
+      "name": "Túi nam 3",
       "price": 450000,
       "quantity": 8,
       "category": "nam",
@@ -153,7 +153,7 @@
     },
     {
       "id": 19,
-      "name": "Tui nam 4",
+      "name": "Túi nam 4",
       "price": 470000,
       "quantity": 7,
       "category": "nam",
@@ -161,7 +161,7 @@
     },
     {
       "id": 20,
-      "name": "Tui nam 5",
+      "name": "Túi nam 5",
       "price": 430000,
       "quantity": 9,
       "category": "nam",
@@ -169,7 +169,7 @@
     },
     {
       "id": 21,
-      "name": "Tui nam 6",
+      "name": "Túi nam 6",
       "price": 420000,
       "quantity": 8,
       "category": "nam",
@@ -177,7 +177,7 @@
     },
     {
       "id": 22,
-      "name": "Tui nam 7",
+      "name": "Túi nam 7",
       "price": 500000,
       "quantity": 5,
       "category": "nam",
@@ -185,7 +185,7 @@
     },
     {
       "id": 23,
-      "name": "Tui nam 8",
+      "name": "Túi nam 8",
       "price": 520000,
       "quantity": 4,
       "category": "nam",
@@ -193,7 +193,7 @@
     },
     {
       "id": 24,
-      "name": "Tui tote 1",
+      "name": "Túi tote 1",
       "price": 150000,
       "quantity": 20,
       "category": "tote",
@@ -201,7 +201,7 @@
     },
     {
       "id": 25,
-      "name": "Tui tote 2",
+      "name": "Túi tote 2",
       "price": 160000,
       "quantity": 18,
       "category": "tote",
@@ -209,7 +209,7 @@
     },
     {
       "id": 26,
-      "name": "Tui tote 3",
+      "name": "Túi tote 3",
       "price": 170000,
       "quantity": 17,
       "category": "tote",
@@ -217,7 +217,7 @@
     },
     {
       "id": 27,
-      "name": "Tui tote 4",
+      "name": "Túi tote 4",
       "price": 180000,
       "quantity": 16,
       "category": "tote",
@@ -225,7 +225,7 @@
     },
     {
       "id": 28,
-      "name": "Tui tote 5",
+      "name": "Túi tote 5",
       "price": 190000,
       "quantity": 15,
       "category": "tote",
@@ -233,7 +233,7 @@
     },
     {
       "id": 29,
-      "name": "Tui tote 6",
+      "name": "Túi tote 6",
       "price": 200000,
       "quantity": 14,
       "category": "tote",
@@ -241,7 +241,7 @@
     },
     {
       "id": 30,
-      "name": "Tui tote 7",
+      "name": "Túi tote 7",
       "price": 210000,
       "quantity": 13,
       "category": "tote",
@@ -249,7 +249,7 @@
     },
     {
       "id": 31,
-      "name": "Tui tote 8",
+      "name": "Túi tote 8",
       "price": 220000,
       "quantity": 12,
       "category": "tote",
@@ -257,7 +257,7 @@
     },
     {
       "id": 32,
-      "name": "Tui tote 9",
+      "name": "Túi tote 9",
       "price": 230000,
       "quantity": 11,
       "category": "tote",
@@ -265,7 +265,7 @@
     },
     {
       "id": 33,
-      "name": "Tui tote 10",
+      "name": "Túi tote 10",
       "price": 240000,
       "quantity": 10,
       "category": "tote",
@@ -273,7 +273,7 @@
     },
     {
       "id": 34,
-      "name": "Tui tote 11",
+      "name": "Túi tote 11",
       "price": 250000,
       "quantity": 9,
       "category": "tote",
@@ -281,7 +281,7 @@
     },
     {
       "id": 35,
-      "name": "Tui tote 12",
+      "name": "Túi tote 12",
       "price": 260000,
       "quantity": 8,
       "category": "tote",
@@ -289,7 +289,7 @@
     },
     {
       "id": 36,
-      "name": "Tui tote 13",
+      "name": "Túi tote 13",
       "price": 270000,
       "quantity": 7,
       "category": "tote",
@@ -297,7 +297,7 @@
     },
     {
       "id": 37,
-      "name": "Tui tote 14",
+      "name": "Túi tote 14",
       "price": 280000,
       "quantity": 6,
       "category": "tote",
@@ -305,7 +305,7 @@
     },
     {
       "id": 38,
-      "name": "Tui tote 15",
+      "name": "Túi tote 15",
       "price": 290000,
       "quantity": 5,
       "category": "tote",
@@ -313,7 +313,7 @@
     },
     {
       "id": 39,
-      "name": "Tui tote 16",
+      "name": "Túi tote 16",
       "price": 300000,
       "quantity": 4,
       "category": "tote",
@@ -321,7 +321,7 @@
     },
     {
       "id": 40,
-      "name": "Tui nu 1",
+      "name": "Túi nữ 1",
       "price": 350000,
       "quantity": 15,
       "category": "nu",
@@ -329,7 +329,7 @@
     },
     {
       "id": 41,
-      "name": "Tui nu 2",
+      "name": "Túi nữ 2",
       "price": 360000,
       "quantity": 14,
       "category": "nu",
@@ -337,7 +337,7 @@
     },
     {
       "id": 42,
-      "name": "Tui nu 3",
+      "name": "Túi nữ 3",
       "price": 370000,
       "quantity": 13,
       "category": "nu",
@@ -345,7 +345,7 @@
     },
     {
       "id": 43,
-      "name": "Tui nu 4",
+      "name": "Túi nữ 4",
       "price": 380000,
       "quantity": 12,
       "category": "nu",
@@ -353,7 +353,7 @@
     },
     {
       "id": 44,
-      "name": "Tui nu 5",
+      "name": "Túi nữ 5",
       "price": 390000,
       "quantity": 11,
       "category": "nu",
@@ -361,7 +361,7 @@
     },
     {
       "id": 45,
-      "name": "Tui nu 6",
+      "name": "Túi nữ 6",
       "price": 400000,
       "quantity": 10,
       "category": "nu",
@@ -369,7 +369,7 @@
     },
     {
       "id": 46,
-      "name": "Tui nu 7",
+      "name": "Túi nữ 7",
       "price": 410000,
       "quantity": 9,
       "category": "nu",
@@ -377,7 +377,7 @@
     },
     {
       "id": 47,
-      "name": "Tui nu 8",
+      "name": "Túi nữ 8",
       "price": 420000,
       "quantity": 8,
       "category": "nu",
@@ -385,7 +385,7 @@
     },
     {
       "id": 48,
-      "name": "Tui nu 9",
+      "name": "Túi nữ 9",
       "price": 430000,
       "quantity": 7,
       "category": "nu",
@@ -393,7 +393,7 @@
     },
     {
       "id": 49,
-      "name": "Tui nu 10",
+      "name": "Túi nữ 10",
       "price": 440000,
       "quantity": 6,
       "category": "nu",
@@ -401,7 +401,7 @@
     },
     {
       "id": 50,
-      "name": "Tui nu 11",
+      "name": "Túi nữ 11",
       "price": 450000,
       "quantity": 5,
       "category": "nu",
@@ -409,7 +409,7 @@
     },
     {
       "id": 51,
-      "name": "Tui nu 12",
+      "name": "Túi nữ 12",
       "price": 460000,
       "quantity": 4,
       "category": "nu",
@@ -417,7 +417,7 @@
     },
     {
       "id": 52,
-      "name": "Tui nu 13",
+      "name": "Túi nữ 13",
       "price": 470000,
       "quantity": 3,
       "category": "nu",
@@ -425,7 +425,7 @@
     },
     {
       "id": 53,
-      "name": "Tui nu 14",
+      "name": "Túi nữ 14",
       "price": 480000,
       "quantity": 3,
       "category": "nu",
@@ -433,7 +433,7 @@
     },
     {
       "id": 54,
-      "name": "Tui nu 15",
+      "name": "Túi nữ 15",
       "price": 490000,
       "quantity": 2,
       "category": "nu",
@@ -441,7 +441,7 @@
     },
     {
       "id": 55,
-      "name": "Tui nu 16",
+      "name": "Túi nữ 16",
       "price": 500000,
       "quantity": 2,
       "category": "nu",
