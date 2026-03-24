@@ -13,7 +13,7 @@
       "price": 500000,
       "quantity": 10,
       "category": "dulich",
-      "image": "/images/dl1.jpg"
+      "image": "/data/img/dl1.jpg"
     },
     {
       "id": 2,
@@ -21,7 +21,7 @@
       "price": 520000,
       "quantity": 8,
       "category": "dulich",
-      "image": "/images/dl2.jpg"
+      "image": "/data/img/dl2.jpg"
     },
     {
       "id": 3,
@@ -29,7 +29,7 @@
       "price": 480000,
       "quantity": 12,
       "category": "dulich",
-      "image": "/images/dl3.jpg"
+      "image": "/data/img/dl3.jpg"
     },
     {
       "id": 4,
@@ -37,7 +37,7 @@
       "price": 510000,
       "quantity": 9,
       "category": "dulich",
-      "image": "/images/dl4.jpg"
+      "image": "/data/img/dl4.jpg"
     },
     {
       "id": 5,
@@ -45,7 +45,7 @@
       "price": 530000,
       "quantity": 7,
       "category": "dulich",
-      "image": "/images/dl5.jpg"
+      "image": "/data/img/dl5.jpg"
     },
     {
       "id": 6,
@@ -53,7 +53,7 @@
       "price": 550000,
       "quantity": 6,
       "category": "dulich",
-      "image": "/images/dl6.jpg"
+      "image": "/data/img/dl6.jpg"
     },
     {
       "id": 7,
@@ -61,7 +61,7 @@
       "price": 490000,
       "quantity": 11,
       "category": "dulich",
-      "image": "/images/dl7.jpg"
+      "image": "/data/img/dl7.jpg"
     },
     {
       "id": 8,
@@ -69,7 +69,7 @@
       "price": 600000,
       "quantity": 5,
       "category": "dulich",
-      "image": "/images/dl8.jpg"
+      "image": "/data/img/dl8.jpg"
     },
     {
       "id": 9,
@@ -77,7 +77,7 @@
       "price": 520000,
       "quantity": 8,
       "category": "dulich",
-      "image": "/images/dl9.jpg"
+      "image": "/data/img/dl9.jpg"
     },
     {
       "id": 10,
@@ -85,7 +85,7 @@
       "price": 570000,
       "quantity": 6,
       "category": "dulich",
-      "image": "/images/dl10.jpg"
+      "image": "/data/img/dl10.jpg"
     },
     {
       "id": 11,
@@ -93,7 +93,7 @@
       "price": 510000,
       "quantity": 10,
       "category": "dulich",
-      "image": "/images/dl11.jpg"
+      "image": "/data/img/dl11.jpg"
     },
     {
       "id": 12,
@@ -101,7 +101,7 @@
       "price": 530000,
       "quantity": 9,
       "category": "dulich",
-      "image": "/images/dl12.jpg"
+      "image": "/data/img/dl12.jpg"
     },
     {
       "id": 13,
@@ -109,7 +109,7 @@
       "price": 550000,
       "quantity": 7,
       "category": "dulich",
-      "image": "/images/dl13.jpg"
+      "image": "/data/img/dl13.jpg"
     },
     {
       "id": 14,
@@ -117,7 +117,7 @@
       "price": 580000,
       "quantity": 6,
       "category": "dulich",
-      "image": "/images/dl14.jpg"
+      "image": "/data/img/dl14.jpg"
     },
     {
       "id": 15,
@@ -125,7 +125,7 @@
       "price": 600000,
       "quantity": 5,
       "category": "dulich",
-      "image": "/images/dl15.jpg"
+      "image": "/data/img/dl15.jpg"
     },
     {
       "id": 16,
@@ -133,7 +133,7 @@
       "price": 400000,
       "quantity": 10,
       "category": "nam",
-      "image": "/images/nam1.jpg"
+      "image": "/data/img/nam1.jpg"
     },
     {
       "id": 17,
@@ -141,7 +141,7 @@
       "price": 420000,
       "quantity": 9,
       "category": "nam",
-      "image": "/images/nam2.jpg"
+      "image": "/data/img/nam2.jpg"
     },
     {
       "id": 18,
@@ -149,7 +149,7 @@
       "price": 450000,
       "quantity": 8,
       "category": "nam",
-      "image": "/images/nam3.jpg"
+      "image": "/data/img/nam3.jpg"
     },
     {
       "id": 19,
@@ -157,7 +157,7 @@
       "price": 470000,
       "quantity": 7,
       "category": "nam",
-      "image": "/images/nam4.jpeg"
+      "image": "/data/img/nam4.jpeg"
     },
     {
       "id": 20,
@@ -165,7 +165,7 @@
       "price": 430000,
       "quantity": 9,
       "category": "nam",
-      "image": "/images/nam5.jpeg"
+      "image": "/data/img/nam5.jpeg"
     },
     {
       "id": 21,
@@ -173,7 +173,7 @@
       "price": 420000,
       "quantity": 8,
       "category": "nam",
-      "image": "/images/nam6.jpeg"
+      "image": "/data/img/nam6.jpeg"
     },
     {
       "id": 22,
@@ -181,7 +181,7 @@
       "price": 500000,
       "quantity": 5,
       "category": "nam",
-      "image": "/images/nam7.jpg"
+      "image": "/data/img/nam7.jpg"
     },
     {
       "id": 23,
@@ -189,7 +189,7 @@
       "price": 520000,
       "quantity": 4,
       "category": "nam",
-      "image": "/images/nam8.jpg"
+      "image": "/data/img/nam8.jpg"
     },
     {
       "id": 24,
@@ -197,7 +197,7 @@
       "price": 150000,
       "quantity": 20,
       "category": "tote",
-      "image": "/images/tote1.jpg"
+      "image": "/data/img/tote1.jpg"
     },
     {
       "id": 25,
@@ -205,7 +205,7 @@
       "price": 160000,
       "quantity": 18,
       "category": "tote",
-      "image": "/images/tote2.jpg"
+      "image": "/data/img/tote2.jpg"
     },
     {
       "id": 26,
@@ -213,7 +213,7 @@
       "price": 170000,
       "quantity": 17,
       "category": "tote",
-      "image": "/images/tote3.jpg"
+      "image": "/data/img/tote3.jpg"
     },
     {
       "id": 27,
@@ -221,7 +221,7 @@
       "price": 180000,
       "quantity": 16,
       "category": "tote",
-      "image": "/images/tote4.jpg"
+      "image": "/data/img/tote4.jpg"
     },
     {
       "id": 28,
@@ -229,7 +229,7 @@
       "price": 190000,
       "quantity": 15,
       "category": "tote",
-      "image": "/images/tote5.jpg"
+      "image": "/data/img/tote5.jpg"
     },
     {
       "id": 29,
@@ -237,7 +237,7 @@
       "price": 200000,
       "quantity": 14,
       "category": "tote",
-      "image": "/images/tote6.jpg"
+      "image": "/data/img/tote6.jpg"
     },
     {
       "id": 30,
@@ -245,7 +245,7 @@
       "price": 210000,
       "quantity": 13,
       "category": "tote",
-      "image": "/images/tote7.jpg"
+      "image": "/data/img/tote7.jpg"
     },
     {
       "id": 31,
@@ -253,7 +253,7 @@
       "price": 220000,
       "quantity": 12,
       "category": "tote",
-      "image": "/images/tote8.jpg"
+      "image": "/data/img/tote8.jpg"
     },
     {
       "id": 32,
@@ -261,7 +261,7 @@
       "price": 230000,
       "quantity": 11,
       "category": "tote",
-      "image": "/images/tote9.jpg"
+      "image": "/data/img/tote9.jpg"
     },
     {
       "id": 33,
@@ -269,7 +269,7 @@
       "price": 240000,
       "quantity": 10,
       "category": "tote",
-      "image": "/images/tote10.jpg"
+      "image": "/data/img/tote10.jpg"
     },
     {
       "id": 34,
@@ -277,7 +277,7 @@
       "price": 250000,
       "quantity": 9,
       "category": "tote",
-      "image": "/images/tote11.jpg"
+      "image": "/data/img/tote11.jpg"
     },
     {
       "id": 35,
@@ -285,7 +285,7 @@
       "price": 260000,
       "quantity": 8,
       "category": "tote",
-      "image": "/images/tote12.jpg"
+      "image": "/data/img/tote12.jpg"
     },
     {
       "id": 36,
@@ -293,7 +293,7 @@
       "price": 270000,
       "quantity": 7,
       "category": "tote",
-      "image": "/images/tote13.jpg"
+      "image": "/data/img/tote13.jpg"
     },
     {
       "id": 37,
@@ -301,7 +301,7 @@
       "price": 280000,
       "quantity": 6,
       "category": "tote",
-      "image": "/images/tote14.jpg"
+      "image": "/data/img/tote14.jpg"
     },
     {
       "id": 38,
@@ -309,7 +309,7 @@
       "price": 290000,
       "quantity": 5,
       "category": "tote",
-      "image": "/images/tote15.jpg"
+      "image": "/data/img/tote15.jpg"
     },
     {
       "id": 39,
@@ -317,7 +317,7 @@
       "price": 300000,
       "quantity": 4,
       "category": "tote",
-      "image": "/images/tote16.jpg"
+      "image": "/data/img/tote16.jpg"
     },
     {
       "id": 40,
@@ -325,7 +325,7 @@
       "price": 350000,
       "quantity": 15,
       "category": "nu",
-      "image": "/images/nu1.jpg"
+      "image": "/data/img/nu1.jpg"
     },
     {
       "id": 41,
@@ -333,7 +333,7 @@
       "price": 360000,
       "quantity": 14,
       "category": "nu",
-      "image": "/images/nu2.jpg"
+      "image": "/data/img/nu2.jpg"
     },
     {
       "id": 42,
@@ -341,7 +341,7 @@
       "price": 370000,
       "quantity": 13,
       "category": "nu",
-      "image": "/images/nu3.jpg"
+      "image": "/data/img/nu3.jpg"
     },
     {
       "id": 43,
@@ -349,7 +349,7 @@
       "price": 380000,
       "quantity": 12,
       "category": "nu",
-      "image": "/images/nu4.jpg"
+      "image": "/data/img/nu4.jpg"
     },
     {
       "id": 44,
@@ -357,7 +357,7 @@
       "price": 390000,
       "quantity": 11,
       "category": "nu",
-      "image": "/images/nu5.jpg"
+      "image": "/data/img/nu5.jpg"
     },
     {
       "id": 45,
@@ -365,7 +365,7 @@
       "price": 400000,
       "quantity": 10,
       "category": "nu",
-      "image": "/images/nu6.jpg"
+      "image": "/data/img/nu6.jpg"
     },
     {
       "id": 46,
@@ -373,7 +373,7 @@
       "price": 410000,
       "quantity": 9,
       "category": "nu",
-      "image": "/images/nu7.jpg"
+      "image": "/data/img/nu7.jpg"
     },
     {
       "id": 47,
@@ -381,7 +381,7 @@
       "price": 420000,
       "quantity": 8,
       "category": "nu",
-      "image": "/images/nu8.jpg"
+      "image": "/data/img/nu8.jpg"
     },
     {
       "id": 48,
@@ -389,7 +389,7 @@
       "price": 430000,
       "quantity": 7,
       "category": "nu",
-      "image": "/images/nu9.jpg"
+      "image": "/data/img/nu9.jpg"
     },
     {
       "id": 49,
@@ -397,7 +397,7 @@
       "price": 440000,
       "quantity": 6,
       "category": "nu",
-      "image": "/images/nu10.jpg"
+      "image": "/data/img/nu10.jpg"
     },
     {
       "id": 50,
@@ -405,7 +405,7 @@
       "price": 450000,
       "quantity": 5,
       "category": "nu",
-      "image": "/images/nu11.jpg"
+      "image": "/data/img/nu11.jpg"
     },
     {
       "id": 51,
@@ -413,7 +413,7 @@
       "price": 460000,
       "quantity": 4,
       "category": "nu",
-      "image": "/images/nu12.jpg"
+      "image": "/data/img/nu12.jpg"
     },
     {
       "id": 52,
@@ -421,7 +421,7 @@
       "price": 470000,
       "quantity": 3,
       "category": "nu",
-      "image": "/images/nu13.jpg"
+      "image": "/data/img/nu13.jpg"
     },
     {
       "id": 53,
@@ -429,7 +429,7 @@
       "price": 480000,
       "quantity": 3,
       "category": "nu",
-      "image": "/images/nu14.jpg"
+      "image": "/data/img/nu14.jpg"
     },
     {
       "id": 54,
@@ -437,7 +437,7 @@
       "price": 490000,
       "quantity": 2,
       "category": "nu",
-      "image": "/images/nu15.jpg"
+      "image": "/data/img/nu15.jpg"
     },
     {
       "id": 55,
@@ -445,7 +445,7 @@
       "price": 500000,
       "quantity": 2,
       "category": "nu",
-      "image": "/images/nu16.jpg"
+      "image": "/data/img/nu16.jpg"
     }
   ]
 }
