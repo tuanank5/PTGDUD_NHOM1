@@ -15,10 +15,6 @@ export default function Home() {
     getProducts().then(setProducts);
   }, []);
 
-  const handleAdd = (newProduct) => {
-    setProducts([...products, newProduct]);
-  };
-
   return (
     <div>
       <Header />
@@ -28,8 +24,9 @@ export default function Home() {
         Login
       </button>
 
-      {/* FORM */}
-      <ProductForm onAdd={handleAdd} />
+      <button onClick={() => navigate("/productForm")}>
+        Quản lý sản phẩm
+      </button>
 
       {/* LIST */}
       <ProductList products={products} />

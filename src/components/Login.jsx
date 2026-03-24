@@ -1,7 +1,10 @@
 import { useState } from "react";
 import useAuth from "../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+    const navigate = useNavigate();
+
     const { login, logout } = useAuth();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -23,15 +26,18 @@ function Login() {
 
     return (
         <>
-            <h2>Login</h2>
+            <h2>ĐĂNG NHẬP</h2>
             <form action="" onSubmit={handleSubmit}>
+                <p>Tên tài khoản <span style={{color: "red"}}>*</span></p>
                 <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
-                <br />
+                <p>Mật khẩu <span style={{color: "red"}}>*</span></p>
                 <input type="text" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 <br />
-                <button type="submit">Login</button>
+                <br />
+                <button type="submit">ĐĂNG NHẬP</button>
             </form>
-            <button onClick={handleLogout}>Logout</button>
+            <br />
+            <button onClick={() => navigate("/register")}>Đăng ký tài khoản</button>
         </>
     )
 }
