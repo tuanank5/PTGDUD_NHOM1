@@ -2,36 +2,39 @@ import "../styles/Header.css"
 
 export default function Header() {
   return (
-    <div>
-      <div className="header-top">
-        <span>CSKH Liên Hệ Nhóm 1: PTGDUD cô Hiền</span>
-
-        <div className="header-right">
-          {/* Tìm kiếm theo all hoặc từng cái */}
-          <div className="search-box">
-            <select>
-              <option>All</option>
-              <option>Túi nữ</option>
-              <option>Túi nam</option>
-              <option>Túi trẻ em</option>
-              <option>Túi tote</option>
-            </select>
-
-            <input type="text" placeholder="Tìm kiếm..." />
-
-            <button>🔍</button>
-          </div>
-
-          {/* Tài khoản */}
-          <span className="icon-user">👤</span>
-
-          {/* Giỏ hàng */}
-          <span className="icon-cart">
-            🛒
-            <span className="cart-count">0</span>
-          </span>
+    <header className="header-luxury">
+      <div className="header-wrapper">
+        <div className="logo-luxury" onClick={() => window.location.href = '/'}>
+          <span className="brand-name">AAAAA</span>
+          <span className="brand-sub">LUXURY BAGS</span>
         </div>
-      </div>
+
+        <div className="search-luxury">
+          <input type="text" placeholder="Tìm kiếm sản phẩm..." />
+          <button className="btn-search-lux">🔍</button>
+        </div>
+
+       <div className="actions-luxury">
+
+  <div className="action-item">
+    <span className="lux-icon">❤️</span>
+    <span className="lux-label">Yêu thích</span>
+  </div>
+
+  <div className="action-item">
+    <div className="cart-lux-wrapper">
+      <span className="lux-icon">🛒</span>
+      <span className="cart-lux-count">0</span>
     </div>
+    <span className="lux-label">Giỏ hàng</span>
+  </div>
+
+  <div className="action-item">
+    <span className="lux-icon">👤</span>
+    <span className="lux-label">Tài khoản</span>
+  </div>
+</div>
+      </div>
+    </header>
   );
 }

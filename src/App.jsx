@@ -5,14 +5,18 @@ import Login from './components/Login';
 import Footer from './components/Footer';
 import Register from './components/Register';
 import ProductForm from './components/ProductForm';
+import ProductListPage from './pages/ProductList';
+
+import Productnu1 from './pages/nu/Productnu1'; 
 
 function App() {
-
   const routes = [
     { path: "/", element: <Home /> },
     { path: "/login", element: <Login /> },
     { path: "/register", element: <Register /> },
     { path: "/productForm", element: <ProductForm /> },
+    { path: "/products", element: <ProductListPage /> },
+    { path: "/product-detail-nu-1", element: <Productnu1 /> },
   ];
 
   return (

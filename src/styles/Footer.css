@@ -1,129 +1,176 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
 .footer {
-  background-color: #000000;
-  color: #a0a0a0;
-  padding: 60px 0 20px 0;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  line-height: 1.6;
+  background-color: #5C4033; 
+  color: #fdf9f3; 
+  font-family: 'Arial', sans-serif;
+  padding-top: 80px;
 }
 
 .footer-container {
-  max-width: 1400px; /* Tăng độ rộng để dàn hàng ngang */
+  max-width: 1890px;
   margin: 0 auto;
-  display: grid;
-  /* Cột 1 chiếm 3 phần diện tích, các cột còn lại 1 phần */
-  grid-template-columns: 3fr 1.2fr 1.2fr 1.2fr; 
-  gap: 30px;
-  padding: 0 40px;
+  padding: 0 90px;
 }
 
-/* Lệnh cấm xuống dòng cho các dòng chữ dài */
-.no-wrap {
-  white-space: nowrap;
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(253, 249, 243, 0.15); 
 }
 
 .footer-logo {
-  color: #fff;
-  font-size: 38px;
-  font-weight: 600;
-  margin: 0;
-  letter-spacing: 8px;
-}
-
-.slogan {
-  font-size: 10px;
-  text-transform: uppercase;
-  color: #444;
-  margin-bottom: 25px;
+  font-size: 28px;
   letter-spacing: 3px;
+  margin: 0 0 20px 0;
+  color: #c5a572;
 }
 
-.brand-info h4 {
-  color: #fff;
+.footer-desc {
   font-size: 14px;
-  margin: 15px 0;
-}
-
-/* Tiêu đề các cột nhỏ */
-.footer-col h3 {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
+  line-height: 1.6;
+  color: #d8cbb8; 
   margin-bottom: 25px;
-  position: relative;
-  padding-bottom: 10px;
-  white-space: nowrap;
+  padding-right: 20px;
 }
 
-.footer-col h3::after {
-  content: "";
-  position: absolute; left: 0; bottom: 0;
-  width: 30px; height: 1px;
-  background-color: #444;
+.footer-title {
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  margin: 0 0 25px 0;
+  color: #fff;
+  text-transform: uppercase;
 }
 
-/* Links & Icons */
-.footer-links, .social-links { list-style: none; padding: 0; }
-
-.footer-links li, .social-links li {
-  margin-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-  padding-bottom: 6px;
+.footer-links, .footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-links a, .social-links a {
-  color: #888;
+.footer-links li, .footer-contact li {
+  margin-bottom: 15px;
+}
+
+.footer-links a, .footer-contact li {
+  color: #d8cbb8;
   text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #c5a572;
+  padding-left: 5px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid #d8cbb8;
   display: flex;
   align-items: center;
+  justify-content: center;
+  color: #d8cbb8;
+  text-decoration: none;
   transition: 0.3s;
-}
-
-.footer-links a:hover, .social-links a:hover {
-  color: #fff;
-  transform: translateX(5px);
-}
-
-.custom-icon {
-  width: 18px; height: 18px;
-  margin-right: 12px;
-  object-fit: contain;
-}
-
-/* Hotline & Badge */
-.main-hotline {
-  color: #e63946;
   font-weight: bold;
 }
 
-.main-hotline span { font-size: 16px; }
-
-.white-text { color: #fff; }
-
-.bct-badge img {
-  width: 140px;
-  margin-top: 20px;
-  filter: grayscale(1); /* Làm logo BCT thành đen trắng cho sang */
+.social-icon:hover {
+  background-color: #c5a572;
+  border-color: #c5a572;
+  color: #fff;
 }
 
-.bct-badge img:hover { filter: grayscale(0); }
+.newsletter {
+  margin-top: 25px;
+}
+
+.newsletter p {
+  font-size: 13px;
+  color: #d8cbb8;
+  margin-bottom: 10px;
+}
+
+.newsletter-form {
+  display: flex;
+  height: 45px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0 15px;
+  border: 1px solid #d8cbb8;
+  background: transparent;
+  color: #fff;
+  outline: none;
+}
+
+.newsletter-form input::placeholder {
+  color: #888;
+}
+
+.newsletter-form button {
+  padding: 0 20px;
+  background: #c5a572;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: #fff;
+  color: #5C4033;
+}
 
 .footer-bottom {
-  text-align: center;
-  margin-top: 50px;
-  border-top: 1px solid #111;
-  padding-top: 20px;
-  font-size: 11px;
-  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
 }
 
-/* Responsive cho Mobile */
-@media (max-width: 1024px) {
+.footer-bottom p {
+  margin: 0;
+  font-size: 13px;
+  color: #d8cbb8;
+}
+
+.payment-icons {
+  width: 150px; 
+  height: auto;  
+  object-fit: contain;
+  opacity: 0.8;
+}
+@media (max-width: 1200px) {
   .footer-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    padding: 0 30px;
   }
-  .no-wrap { white-space: normal; } /* Mobile thì cho xuống dòng lại */
+}
+
+@media (max-width: 992px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr; 
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-top {
+    grid-template-columns: 1fr; 
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
 }

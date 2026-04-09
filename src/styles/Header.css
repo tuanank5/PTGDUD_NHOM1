@@ -1,54 +1,123 @@
-.header-top {
-  background: #333;
-  color: #fff;
-  padding: 8px 20px;
+
+.header-luxury {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background: rgba(253, 249, 243, 0.95);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid #E8D5C4;
+}
+
+.header-wrapper {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 15px 30px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.header-right {
+.logo-luxury {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.brand-name {
+  font-size: 26px;
+  letter-spacing: 4px;
+  color: #5C4033;
+}
+
+.brand-sub {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #B5945E;
+  text-align: center;
+}
+
+.search-luxury {
   display: flex;
   align-items: center;
-  gap: 10px;
+
+  width: 380px;
+  background: #fff;
+  border: 1px solid #E8D5C4;
+  border-radius: 30px;
+  padding: 5px 10px 5px 20px;
 }
 
-.search-box {
-  display: flex;
-}
-
-.search-box select {
-  padding: 5px;
-}
-
-.search-box input {
-  padding: 5px;
-}
-
-.search-box button {
-  background: red;
-  color: #fff;
-  padding: 5px 10px;
+.search-luxury input {
   border: none;
+  outline: none;
+  flex: 1;
+  font-size: 13px;
+}
+
+.btn-search-lux {
+  background: #B5945E;
+  color: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   cursor: pointer;
 }
 
-.icon-user {
-  cursor: pointer;
+.actions-luxury {
+  display: flex;
+  gap: 35px;
 }
 
-.icon-cart {
+.action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px; 
   cursor: pointer;
+  color: #5C4033;
+  transition: 0.3s;
+}
+.lux-icon {
+  font-size: 22px; 
+}
+
+.lux-label {
+  font-size: 13px; 
+  font-weight: 500;
+}
+
+.action-item:hover {
+  color: #B5945E;
+  transform: translateY(-2px);
+}
+
+.cart-lux-wrapper {
   position: relative;
 }
 
-.cart-count {
+.cart-lux-count {
   position: absolute;
   top: -5px;
   right: -10px;
-  background: red;
+
+  background: #B5945E;
   color: #fff;
+  font-size: 9px;
+  font-weight: bold;
+
+  width: 18px; 
+  height: 18px;
   border-radius: 50%;
-  font-size: 12px;
-  padding: 2px 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #fdf9f3;
 }

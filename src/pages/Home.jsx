@@ -5,7 +5,12 @@ import Menu from "../components/Menu";
 import ProductList from "../components/ProductList";
 import ProductForm from "../components/ProductForm";
 import { getProducts } from "../api/productsAPI";
-
+import Slider from "../components/home/Slider";
+import ProductSection from "../components/home/ProductSection";
+import Banner from "../components/home/Banner";
+import Category from "../components/home/Category";
+import WhyUs from "../components/home/WhyUs";
+import Review from "../components/home/Review";
 export default function Home() {
   const navigate = useNavigate();
 
@@ -19,18 +24,14 @@ export default function Home() {
     <div>
       <Header />
       <Menu />
+<Slider />
+<ProductSection />
+<Banner />
+      <Category />
+      <WhyUs />
+      <Review />
 
-      <button onClick={() => navigate("/login")}>
-        Đăng nhập
-      </button>
-
-      <button onClick={() => navigate("/productForm")}>
-        Quản lý sản phẩm
-      </button>
-
-      {/* LIST */}
-      <ProductList products={products} />
+      
     </div>
   );
 }
-//fix

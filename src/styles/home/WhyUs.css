@@ -1,0 +1,85 @@
+.whyus {
+  background: #fdf9f3; 
+  padding: 0 0 60px 0; 
+  font-family: 'Arial', sans-serif;
+  margin-top: -40px; 
+}
+
+.whyus-container {
+  max-width: 1890px; 
+  margin: 0 auto;
+  padding: 0 90px; 
+}
+
+.whyus-inner {
+  background: #ffffff;
+  padding: 25px 0; 
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(92, 64, 51, 0.05);
+  width: 100%;
+}
+
+.why-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+}
+
+.why-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 30px;
+  width: 1px;
+  background-color: #f0f0f0;
+}
+
+.why-icon-box {
+  width: 42px;
+  height: 42px;
+  background: #fdf9f3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.why-icon {
+  font-size: 18px;
+}
+
+.why-content {
+  text-align: left;
+}
+.whyus {
+  background: #fdf9f3;
+  padding-bottom: 20px; 
+}
+.why-content h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #5C4033; 
+  margin: 0 0 3px 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.why-content p {
+  font-size: 11px;
+  color: #888;
+  margin: 0;
+  line-height: 1.2;
+}
+
+@media (max-width: 1200px) {
+  .whyus-container {
+    padding: 0 30px;
+  }
+}
