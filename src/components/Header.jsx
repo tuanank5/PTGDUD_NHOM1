@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import "../styles/Header.css"
 
 export default function Header() {
+  const navigate = useNavigate();
   return (
     <header className="header-luxury">
       <div className="header-wrapper">
@@ -29,7 +31,10 @@ export default function Header() {
     <span className="lux-label">Giỏ hàng</span>
   </div>
 
-  <div className="action-item">
+  <div className="action-item" 
+            onClick={() => navigate('/login')} 
+            style={{ cursor: "pointer" }}
+          >
     <span className="lux-icon">👤</span>
     <span className="lux-label">Tài khoản</span>
   </div>

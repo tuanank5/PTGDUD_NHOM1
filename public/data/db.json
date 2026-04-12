@@ -13,7 +13,9 @@
       "price": 500000,
       "quantity": 10,
       "category": "dulich",
-      "image": "/data/img/dl1.jpg"
+      "image": "/data/img/dl1.jpg",
+      "tag": "HOT",
+      "type": "best-seller"
     },
     {
       "id": 2,
@@ -21,7 +23,9 @@
       "price": 520000,
       "quantity": 8,
       "category": "dulich",
-      "image": "/data/img/dl2.jpg"
+      "image": "/data/img/dl2.jpg",
+      "tag": "MỚI",
+      "type": "new"
     },
     {
       "id": 3,
@@ -29,7 +33,8 @@
       "price": 480000,
       "quantity": 12,
       "category": "dulich",
-      "image": "/data/img/dl3.jpg"
+      "image": "/data/img/dl3.jpg",
+      "type": "normal"
     },
     {
       "id": 4,
@@ -37,7 +42,9 @@
       "price": 510000,
       "quantity": 9,
       "category": "dulich",
-      "image": "/data/img/dl4.jpg"
+      "image": "/data/img/dl4.jpg",
+      "tag": "SALE",
+      "type": "normal"
     },
     {
       "id": 5,
@@ -45,7 +52,9 @@
       "price": 530000,
       "quantity": 7,
       "category": "dulich",
-      "image": "/data/img/dl5.jpg"
+      "image": "/data/img/dl5.jpg",
+      "tag": "HOT",
+      "type": "best-seller"
     },
     {
       "id": 6,
@@ -53,7 +62,9 @@
       "price": 550000,
       "quantity": 6,
       "category": "dulich",
-      "image": "/data/img/dl6.jpg"
+      "image": "/data/img/dl6.jpg",
+      "tag": "MỚI",
+      "type": "new"
     },
     {
       "id": 7,
@@ -61,7 +72,8 @@
       "price": 490000,
       "quantity": 11,
       "category": "dulich",
-      "image": "/data/img/dl7.jpg"
+      "image": "/data/img/dl7.jpg",
+      "type": "normal"
     },
     {
       "id": 8,
@@ -69,7 +81,9 @@
       "price": 600000,
       "quantity": 5,
       "category": "dulich",
-      "image": "/data/img/dl8.jpg"
+      "image": "/data/img/dl8.jpg",
+      "tag": "HOT",
+      "type": "best-seller"
     },
     {
       "id": 9,
@@ -77,7 +91,8 @@
       "price": 520000,
       "quantity": 8,
       "category": "dulich",
-      "image": "/data/img/dl9.jpg"
+      "image": "/data/img/dl9.jpg",
+      "type": "normal"
     },
     {
       "id": 10,
@@ -85,7 +100,9 @@
       "price": 570000,
       "quantity": 6,
       "category": "dulich",
-      "image": "/data/img/dl10.jpg"
+      "image": "/data/img/dl10.jpg",
+      "tag": "MỚI",
+      "type": "new"
     },
     {
       "id": 11,
@@ -93,7 +110,8 @@
       "price": 510000,
       "quantity": 10,
       "category": "dulich",
-      "image": "/data/img/dl11.jpg"
+      "image": "/data/img/dl11.jpg",
+      "type": "normal"
     },
     {
       "id": 12,
@@ -101,7 +119,9 @@
       "price": 530000,
       "quantity": 9,
       "category": "dulich",
-      "image": "/data/img/dl12.jpg"
+      "image": "/data/img/dl12.jpg",
+      "tag": "HOT",
+      "type": "best-seller"
     },
     {
       "id": 13,
@@ -109,7 +129,8 @@
       "price": 550000,
       "quantity": 7,
       "category": "dulich",
-      "image": "/data/img/dl13.jpg"
+      "image": "/data/img/dl13.jpg",
+      "type": "normal"
     },
     {
       "id": 14,
@@ -117,7 +138,9 @@
       "price": 580000,
       "quantity": 6,
       "category": "dulich",
-      "image": "/data/img/dl14.jpg"
+      "image": "/data/img/dl14.jpg",
+      "tag": "MỚI",
+      "type": "new"
     },
     {
       "id": 15,
@@ -125,7 +148,9 @@
       "price": 600000,
       "quantity": 5,
       "category": "dulich",
-      "image": "/data/img/dl15.jpg"
+      "image": "/data/img/dl15.jpg",
+      "tag": "HOT",
+      "type": "best-seller"
     },
     {
       "id": 16,
@@ -133,7 +158,9 @@
       "price": 400000,
       "quantity": 10,
       "category": "nam",
-      "image": "/data/img/nam1.jpg"
+      "image": "/data/img/nam1.jpg",
+      "tag": "MỚI",
+      "type": "new"
     },
     {
       "id": 17,
@@ -141,7 +168,8 @@
       "price": 420000,
       "quantity": 9,
       "category": "nam",
-      "image": "/data/img/nam2.jpg"
+      "image": "/data/img/nam2.jpg",
+      "type": "normal"
     },
     {
       "id": 18,
@@ -149,7 +177,9 @@
       "price": 450000,
       "quantity": 8,
       "category": "nam",
-      "image": "/data/img/nam3.jpg"
+      "image": "/data/img/nam3.jpg",
+      "tag": "HOT",
+      "type": "best-seller"
     },
     {
       "id": 19,
@@ -157,7 +187,8 @@
       "price": 470000,
       "quantity": 7,
       "category": "nam",
-      "image": "/data/img/nam4.jpeg"
+      "image": "/data/img/nam4.jpeg",
+      "type": "normal"
     },
     {
       "id": 20,
@@ -165,7 +196,9 @@
       "price": 430000,
       "quantity": 9,
       "category": "nam",
-      "image": "/data/img/nam5.jpeg"
+      "image": "/data/img/nam5.jpeg",
+      "tag": "MỚI",
+      "type": "new"
     },
     {
       "id": 21,
@@ -173,7 +206,8 @@
       "price": 420000,
       "quantity": 8,
       "category": "nam",
-      "image": "/data/img/nam6.jpeg"
+      "image": "/data/img/nam6.jpeg",
+      "type": "normal"
     },
     {
       "id": 22,
@@ -181,7 +215,9 @@
       "price": 500000,
       "quantity": 5,
       "category": "nam",
-      "image": "/data/img/nam7.jpg"
+      "image": "/data/img/nam7.jpg",
+      "tag": "HOT",
+      "type": "best-seller"
     },
     {
       "id": 23,
@@ -189,7 +225,8 @@
       "price": 520000,
       "quantity": 4,
       "category": "nam",
-      "image": "/data/img/nam8.jpg"
+      "image": "/data/img/nam8.jpg",
+      "type": "normal"
     },
     {
       "id": 24,
@@ -197,7 +234,9 @@
       "price": 150000,
       "quantity": 20,
       "category": "tote",
-      "image": "/data/img/tote1.jpg"
+      "image": "/data/img/tote1.jpg",
+      "tag": "SALE",
+      "type": "normal"
     },
     {
       "id": 25,
@@ -205,7 +244,9 @@
       "price": 160000,
       "quantity": 18,
       "category": "tote",
-      "image": "/data/img/tote2.jpg"
+      "image": "/data/img/tote2.jpg",
+      "tag": "MỚI",
+      "type": "new"
     },
     {
       "id": 26,
@@ -213,7 +254,8 @@
       "price": 170000,
       "quantity": 17,
       "category": "tote",
-      "image": "/data/img/tote3.jpg"
+      "image": "/data/img/tote3.jpg",
+      "type": "normal"
     },
     {
       "id": 27,
@@ -221,7 +263,9 @@
       "price": 180000,
       "quantity": 16,
       "category": "tote",
-      "image": "/data/img/tote4.jpg"
+      "image": "/data/img/tote4.jpg",
+      "tag": "HOT",
+      "type": "best-seller"
     },
     {
       "id": 28,
@@ -229,7 +273,8 @@
       "price": 190000,
       "quantity": 15,
       "category": "tote",
-      "image": "/data/img/tote5.jpg"
+      "image": "/data/img/tote5.jpg",
+      "type": "normal"
     },
     {
       "id": 29,
@@ -237,7 +282,9 @@
       "price": 200000,
       "quantity": 14,
       "category": "tote",
-      "image": "/data/img/tote6.jpg"
+      "image": "/data/img/tote6.jpg",
+      "tag": "MỚI",
+      "type": "new"
     },
     {
       "id": 30,
@@ -245,7 +292,8 @@
       "price": 210000,
       "quantity": 13,
       "category": "tote",
-      "image": "/data/img/tote7.jpg"
+      "image": "/data/img/tote7.jpg",
+      "type": "normal"
     },
     {
       "id": 31,
@@ -253,7 +301,9 @@
       "price": 220000,
       "quantity": 12,
       "category": "tote",
-      "image": "/data/img/tote8.jpg"
+      "image": "/data/img/tote8.jpg",
+      "tag": "HOT",
+      "type": "best-seller"
     },
     {
       "id": 32,
@@ -261,7 +311,8 @@
       "price": 230000,
       "quantity": 11,
       "category": "tote",
-      "image": "/data/img/tote9.jpg"
+      "image": "/data/img/tote9.jpg",
+      "type": "normal"
     },
     {
       "id": 33,
@@ -269,55 +320,9 @@
       "price": 240000,
       "quantity": 10,
       "category": "tote",
-      "image": "/data/img/tote10.jpg"
-    },
-    {
-      "id": 34,
-      "name": "Túi tote 11",
-      "price": 250000,
-      "quantity": 9,
-      "category": "tote",
-      "image": "/data/img/tote11.jpg"
-    },
-    {
-      "id": 35,
-      "name": "Túi tote 12",
-      "price": 260000,
-      "quantity": 8,
-      "category": "tote",
-      "image": "/data/img/tote12.jpg"
-    },
-    {
-      "id": 36,
-      "name": "Túi tote 13",
-      "price": 270000,
-      "quantity": 7,
-      "category": "tote",
-      "image": "/data/img/tote13.jpg"
-    },
-    {
-      "id": 37,
-      "name": "Túi tote 14",
-      "price": 280000,
-      "quantity": 6,
-      "category": "tote",
-      "image": "/data/img/tote14.jpg"
-    },
-    {
-      "id": 38,
-      "name": "Túi tote 15",
-      "price": 290000,
-      "quantity": 5,
-      "category": "tote",
-      "image": "/data/img/tote15.jpg"
-    },
-    {
-      "id": 39,
-      "name": "Túi tote 16",
-      "price": 300000,
-      "quantity": 4,
-      "category": "tote",
-      "image": "/data/img/tote16.jpg"
+      "image": "/data/img/tote10.jpg",
+      "tag": "MỚI",
+      "type": "new"
     },
     {
       "id": 40,
@@ -325,7 +330,9 @@
       "price": 350000,
       "quantity": 15,
       "category": "nu",
-      "image": "/data/img/nu1.jpg"
+      "image": "/data/img/nu1.jpg",
+      "tag": "HOT",
+      "type": "best-seller"
     },
     {
       "id": 41,
@@ -333,7 +340,9 @@
       "price": 360000,
       "quantity": 14,
       "category": "nu",
-      "image": "/data/img/nu2.jpg"
+      "image": "/data/img/nu2.jpg",
+      "tag": "MỚI",
+      "type": "new"
     },
     {
       "id": 42,
@@ -341,95 +350,8 @@
       "price": 370000,
       "quantity": 13,
       "category": "nu",
-      "image": "/data/img/nu3.jpg"
-    },
-    {
-      "id": 43,
-      "name": "Túi nữ 4",
-      "price": 380000,
-      "quantity": 12,
-      "category": "nu",
-      "image": "/data/img/nu4.jpg"
-    },
-    {
-      "id": 44,
-      "name": "Túi nữ 5",
-      "price": 390000,
-      "quantity": 11,
-      "category": "nu",
-      "image": "/data/img/nu5.jpg"
-    },
-    {
-      "id": 45,
-      "name": "Túi nữ 6",
-      "price": 400000,
-      "quantity": 10,
-      "category": "nu",
-      "image": "/data/img/nu6.jpg"
-    },
-    {
-      "id": 46,
-      "name": "Túi nữ 7",
-      "price": 410000,
-      "quantity": 9,
-      "category": "nu",
-      "image": "/data/img/nu7.jpg"
-    },
-    {
-      "id": 47,
-      "name": "Túi nữ 8",
-      "price": 420000,
-      "quantity": 8,
-      "category": "nu",
-      "image": "/data/img/nu8.jpg"
-    },
-    {
-      "id": 48,
-      "name": "Túi nữ 9",
-      "price": 430000,
-      "quantity": 7,
-      "category": "nu",
-      "image": "/data/img/nu9.jpg"
-    },
-    {
-      "id": 49,
-      "name": "Túi nữ 10",
-      "price": 440000,
-      "quantity": 6,
-      "category": "nu",
-      "image": "/data/img/nu10.jpg"
-    },
-    {
-      "id": 50,
-      "name": "Túi nữ 11",
-      "price": 450000,
-      "quantity": 5,
-      "category": "nu",
-      "image": "/data/img/nu11.jpg"
-    },
-    {
-      "id": 51,
-      "name": "Túi nữ 12",
-      "price": 460000,
-      "quantity": 4,
-      "category": "nu",
-      "image": "/data/img/nu12.jpg"
-    },
-    {
-      "id": 52,
-      "name": "Túi nữ 13",
-      "price": 470000,
-      "quantity": 3,
-      "category": "nu",
-      "image": "/data/img/nu13.jpg"
-    },
-    {
-      "id": 53,
-      "name": "Túi nữ 14",
-      "price": 480000,
-      "quantity": 3,
-      "category": "nu",
-      "image": "/data/img/nu14.jpg"
+      "image": "/data/img/nu3.jpg",
+      "type": "normal"
     },
     {
       "id": 54,
@@ -437,7 +359,9 @@
       "price": 490000,
       "quantity": 2,
       "category": "nu",
-      "image": "/data/img/nu15.jpg"
+      "image": "/data/img/nu15.jpg",
+      "tag": "SALE",
+      "type": "normal"
     },
     {
       "id": 55,
@@ -445,7 +369,9 @@
       "price": 500000,
       "quantity": 2,
       "category": "nu",
-      "image": "/data/img/nu16.jpg"
+      "image": "/data/img/nu16.jpg",
+      "tag": "HOT",
+      "type": "best-seller"
     }
   ]
 }

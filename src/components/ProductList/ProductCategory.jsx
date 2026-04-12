@@ -1,21 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+// Giả sử bạn để các hàm API trong file đặt tên là productService.js
+import { getProducts } from "../../api/productsAPI";
 import "../../styles/ProductList/ProductCategory.css";
 
 export default function ProductCategory() {
+  const [products, setProducts] = useState([]); // Khởi tạo mảng rỗng
+  const [loading, setLoading] = useState(true); // Trạng thái chờ tải dữ liệu
   const [favorites, setFavorites] = useState({});
+
+  // Gọi API khi component render lần đầu
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const data = await getProducts();
+        setProducts(data);
+      } catch (error) {
+        console.error("Lỗi khi lấy dữ liệu sản phẩm:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   const toggleFavorite = (id) => {
     setFavorites(prev => ({ ...prev, [id]: !prev[id] }));
   };
 
-  const products = [
-    { id: 1, name: "TÚI ĐEO VAI NỮ ALAYABOUCLE", price: "2.350.000 VND", img: "/images/products/bag1.jpg" },
-    { id: 2, name: "TÚI XÁCH TAY LADY DIOR STYLE", price: "3.150.000 VND", img: "/images/products/bag2.jpg" },
-    { id: 3, name: "TÚI TOTE CANVAS BASIC", price: "850.000 VND", img: "/images/products/bag3.jpg" },
-    { id: 4, name: "CLUTCH DỰ TIỆC SANG TRỌNG", price: "1.950.000 VND", img: "/images/products/bag4.jpg" },
-    { id: 5, name: "TÚI ĐEO CHÉO NAM CÔNG SỞ", price: "2.100.000 VND", img: "/images/products/bag5.jpg" },
-    { id: 6, name: "BALO VẢI CANVAS HOA", price: "1.250.000 VND", img: "/images/products/bag6.jpg" },
-  ];
+  // Hiển thị màn hình chờ nếu dữ liệu chưa về
+  if (loading) {
+    return <div className="loading">Đang tải sản phẩm...</div>;
+  }
 
   return (
     <div className="category-page">

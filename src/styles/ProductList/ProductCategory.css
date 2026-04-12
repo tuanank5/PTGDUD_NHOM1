@@ -159,10 +159,11 @@
 }
 
 .product-price {
-  font-size: 18px;
-  color: #5C4033;
-  font-weight: 800;
-  margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #c5a572; /* Màu vàng đồng luxury */
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .btn-buy-now {
