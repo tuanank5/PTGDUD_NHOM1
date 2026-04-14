@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import "../../styles/home/Slider.css";
 
 export default function Slider() {
-  // Cập nhật danh sách 5 ảnh của bạn ở đây
   const images = [
     "/images/home/slider/km3.jpg",
     "/images/home/slider/km4.jpg",
@@ -13,7 +12,6 @@ export default function Slider() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Tự động chuyển ảnh sau 5 giây
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => 

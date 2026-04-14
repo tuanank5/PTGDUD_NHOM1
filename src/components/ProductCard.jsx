@@ -25,7 +25,6 @@ export default function ProductCard({ product, onAddToCart }) {
         if (img) img.style.transform = "scale(1)";
       }}
     >
-      {/* IMAGE */}
       <div
         style={{
           width: "100%",
@@ -46,7 +45,6 @@ export default function ProductCard({ product, onAddToCart }) {
         />
       </div>
 
-      {/* INFO */}
       <h3 style={{ margin: "10px 0 5px" }}>
         {product.name}
       </h3>
@@ -66,7 +64,6 @@ export default function ProductCard({ product, onAddToCart }) {
         {product.price.toLocaleString()}đ
       </p>
 
-      {/* BUTTON */}
       <div style={{ display: "flex", gap: 10, marginTop: 10 }}>
         <button
           style={{

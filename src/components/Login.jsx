@@ -3,7 +3,6 @@ import useAuth from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import "../styles/Login.css"; 
 
-// Import ảnh nền và logo mạng xã hội
 import loginBg from "/images/login.jpg"; 
 import fbLogo from "/images/fb.jpg"; 
 import ggLogo from "/images/gg.jpg"; 
@@ -12,7 +11,6 @@ function Login() {
     const navigate = useNavigate();
     const { login } = useAuth();
     
-    // mode có 3 trạng thái: 'login' (Đăng nhập), 'register' (Đăng ký), 'forgot' (Quên mật khẩu)
     const [mode, setMode] = useState('login'); 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");

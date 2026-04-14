@@ -1,6 +1,5 @@
 import "../../styles/home/Review.css";
 
-// 1. Import các hình ảnh từ thư mục cục bộ của bạn
 import ava1 from "/images/home/review/avt1.jpg"; 
 import ava2 from "/images/home/review/avt2.jpg"; 
 import ava3 from "/images/home/review/avt3.jpg"; 
@@ -11,7 +10,7 @@ export default function Review() {
     { 
       text: "Sản phẩm rất đẹp, chất lượng vượt mong đợi. Đóng gói cẩn thận, giao hàng nhanh.", 
       name: "Thanh Hằng",
-      avatar: ava1 // Sử dụng biến đã import
+      avatar: ava1
     },
     { 
       text: "Mình đã mua 2 lần và rất hài lòng. Túi da mềm, mịn, form đẹp, dùng rất thích.", 
@@ -45,7 +44,6 @@ export default function Review() {
               <div className="stars">★★★★★</div>
               <p className="review-text">"{item.text}"</p>
               <div className="user-info">
-                {/* 2. Thẻ img bây giờ sẽ nhận đường dẫn từ file nội bộ */}
                 <img src={item.avatar} alt={item.name} className="avatar" />
                 <span className="user-name">— {item.name}</span>
               </div>

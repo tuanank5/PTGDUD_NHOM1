@@ -67,12 +67,11 @@
   transform: scale(1.05);
 }
 
-/* --- ĐỒNG BỘ CSS TRÁI TIM GIỐNG PRODUCT CATEGORY --- */
 .heart-btn {
   position: absolute;
   top: 10px; 
   right: 10px;
-  background: white !important; /* Đảm bảo luôn màu trắng */
+  background: white !important;
   border: none !important;
   width: 35px !important; 
   height: 35px !important; 
@@ -93,7 +92,7 @@
   background: #fff;
 }
 .heart-btn.active {
-  background-color: #fff0f3 !important; /* Nền hồng nhạt khi click */
+  background-color: #fff0f3 !important; 
 }
 .product-card a {
   text-decoration: none;

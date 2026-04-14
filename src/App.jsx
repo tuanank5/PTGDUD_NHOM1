@@ -6,8 +6,10 @@ import Footer from './components/Footer';
 import Register from './components/Register';
 import ProductForm from './components/ProductForm';
 import ProductListPage from './pages/ProductList';
-
+import FavoritesPage from "./pages/FavoritesPage";
 import Productnu1 from './pages/nu/Productnu1'; 
+import AboutUs from './pages/AboutUs';
+import { FavoritesProvider } from "./context/FavoritesContext";
 
 function App() {
   const routes = [
@@ -17,21 +19,26 @@ function App() {
     { path: "/productForm", element: <ProductForm /> },
     { path: "/products", element: <ProductListPage /> },
     { path: "/product-detail-nu-1", element: <Productnu1 /> },
+    { path: "/about", element: <AboutUs /> },
+    { path: "/favorites", element: <FavoritesPage /> }, 
   ];
 
   return (
-    <BrowserRouter>
-      <div className="app-container">
-        <div className="main-content">
-          <Routes>
-            {routes.map((r) => (
-              <Route key={r.path} path={r.path} element={r.element} />
-            ))}
-          </Routes>
+    // 3. Bọc FavoritesProvider ở đây là chuẩn nhất
+    <FavoritesProvider>
+      <BrowserRouter>
+        <div className="app-container">
+          <div className="main-content">
+            <Routes>
+              {routes.map((r) => (
+                <Route key={r.path} path={r.path} element={r.element} />
+              ))}
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </FavoritesProvider>
   );
 }
 

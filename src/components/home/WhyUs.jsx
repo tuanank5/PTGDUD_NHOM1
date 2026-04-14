@@ -1,4 +1,4 @@
-import "../../styles/home/WhyUs.css"; // Kiểm tra kỹ đường dẫn này
+import "../../styles/home/WhyUs.css"; 
 export default function WhyUs() {
   const data = [
     { icon: "🚚", title: "GIAO HÀNG TOÀN QUỐC", desc: "Miễn phí cho đơn từ 1.000.000đ" },
@@ -10,7 +10,7 @@ export default function WhyUs() {
   return (
     <section className="whyus">
       <div className="whyus-container">
-        <div className="whyus-inner"> {/* Thêm bọc này để khớp padding ngang */}
+        <div className="whyus-inner"> 
           {data.map((item, i) => (
             <div className="why-item" key={i}>
               <div className="why-icon-box">

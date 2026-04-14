@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-// Giả sử bạn để các hàm API trong file đặt tên là productService.js
 import { getProducts } from "../../api/productsAPI";
 import "../../styles/ProductList/ProductCategory.css";
 
 export default function ProductCategory() {
-  const [products, setProducts] = useState([]); // Khởi tạo mảng rỗng
-  const [loading, setLoading] = useState(true); // Trạng thái chờ tải dữ liệu
+  const [products, setProducts] = useState([]); 
+  const [loading, setLoading] = useState(true);
   const [favorites, setFavorites] = useState({});
 
-  // Gọi API khi component render lần đầu
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -28,7 +26,6 @@ export default function ProductCategory() {
     setFavorites(prev => ({ ...prev, [id]: !prev[id] }));
   };
 
-  // Hiển thị màn hình chờ nếu dữ liệu chưa về
   if (loading) {
     return <div className="loading">Đang tải sản phẩm...</div>;
   }

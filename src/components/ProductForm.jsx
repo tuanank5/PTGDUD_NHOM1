@@ -107,7 +107,7 @@ export default function ProductForm() {
           const reader = new FileReader();
 
           reader.onloadend = () => {
-            setImage(reader.result); // base64
+            setImage(reader.result); 
           };
 
           reader.readAsDataURL(file);
