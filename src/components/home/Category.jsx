@@ -1,3 +1,5 @@
+// sự kiện button chuyển sang trang tương ứng
+
 import "../../styles/home/Category.css";
 
 export default function Category() {

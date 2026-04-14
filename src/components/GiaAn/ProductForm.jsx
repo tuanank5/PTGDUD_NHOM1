@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProducts, addProduct, updateProduct, deleteProduct} from "../api/productsAPI";
+import { getProducts, addProduct, updateProduct, deleteProduct} from "../../api/productsAPI";
 
 export default function ProductForm() {
   const [name, setName] = useState("");

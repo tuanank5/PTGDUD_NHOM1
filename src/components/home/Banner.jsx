@@ -1,3 +1,5 @@
+//nhảy sang product ở <button>Mua ngay</button>
+
 import "../../styles/home/Banner.css";
 
 export default function Banner() {

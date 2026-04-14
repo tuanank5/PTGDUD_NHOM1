@@ -131,7 +131,7 @@ export default function ProductCategory() {
               <div className="product-card-luxury" key={item.id}>
                 <div className="product-img-box">
                   <div className="badge-new">Mới</div>
-                  <img src={item.img} alt={item.name} />
+                  <img src={item.image} alt={item.name} />
                   <button 
                     className={`heart-btn ${favorites[item.id] ? 'active' : ''}`}
                     onClick={() => toggleFavorite(item.id)}
