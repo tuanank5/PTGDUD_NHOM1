@@ -1,3 +1,5 @@
+//
+
 import "../../styles/home/WhyUs.css"; 
 export default function WhyUs() {
   const data = [

@@ -1,4 +1,4 @@
-// sửa menu còn Trang chủ Sản phẩm Túi nữ Túi nam Túi tote Túi trẻ em Giới thiệu
+//
 
 import "../styles/Menu.css";
 import { Link } from "react-router-dom";

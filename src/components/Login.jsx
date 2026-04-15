@@ -1,4 +1,4 @@
-//Phân quyền
+//
 
 import { useState } from "react";
 import useAuth from "../hooks/useAuth";
@@ -11,12 +11,13 @@ import ggLogo from "/images/gg.jpg";
 
 function Login() {
     const navigate = useNavigate();
-    const { login } = useAuth();
+    const { login, register } = useAuth();
     
     const [mode, setMode] = useState('login'); 
     const [username, setUsername] = useState("");
+    const [usernameForgot, setUsernameForgot] = useState("");
     const [password, setPassword] = useState("");
-    const [email, setEmail] = useState("");
+    const [confirmPW, setConfirmPW] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,10 +30,23 @@ function Login() {
                 alert("Sai tài khoản hoặc mật khẩu!");
             }
         } else if (mode === 'register') {
-            alert("Đăng ký thành công! Hãy đăng nhập lại.");
-            setMode('login');
+            if (password !== confirmPW) {
+                return alert("Mật khẩu không trùng khớp!");
+            }
+
+            try {
+                await register(username, password);
+                setUsername("");
+                setPassword("");
+                setConfirmPW("");
+
+                alert("Đăng ký thành công! Hãy đăng nhập lại.");
+                setMode('login');
+            } catch (err) {
+                alert(err.message);
+            }
         } else {
-            alert("Yêu cầu khôi phục đã gửi đến: " + email);
+            alert("Yêu cầu khôi phục đã gửi đến tài khoản: " + usernameForgot);
             setMode('login');
         }
     }
@@ -62,32 +76,41 @@ function Login() {
 
                     <form onSubmit={handleSubmit} className="auth-form">
                         {mode !== 'forgot' && (
-                            <input 
-                                type="text" 
-                                placeholder={mode === 'login' ? "Email của bạn" : "Tên tài khoản mới"}
-                                value={username} 
-                                onChange={(e) => setUsername(e.target.value)}
-                                required
-                            />
+                            <>
+                                <input 
+                                    type="text" 
+                                    placeholder={"Tên tài khoản"}
+                                    value={username} 
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    required
+                                />
+                                <input 
+                                    type="password" 
+                                    placeholder="Mật khẩu"
+                                    value={password} 
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
+                                />
+                            </>
                         )}
                         
                         {/* HIỆN Ô EMAIL KHI ĐĂNG KÝ HOẶC QUÊN MẬT KHẨU */}
-                        {(mode === 'register' || mode === 'forgot') && (
+                        {(mode === 'register') && (
                             <input 
-                                type="email" 
-                                placeholder="Địa chỉ Email của bạn"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                type="password" 
+                                placeholder="Nhập lại mật khẩu"
+                                value={confirmPW} 
+                                onChange={(e) => setConfirmPW(e.target.value)}
                                 required
                             />
                         )}
 
-                        {mode !== 'forgot' && (
+                        {(mode === 'forgot') && (
                             <input 
-                                type="password" 
-                                placeholder="Mật khẩu"
-                                value={password} 
-                                onChange={(e) => setPassword(e.target.value)}
+                                type="text" 
+                                placeholder="Tên tài khoản"
+                                value={usernameForgot} 
+                                onChange={(e) => setUsernameForgot(e.target.value)}
                                 required
                             />
                         )}
@@ -104,20 +127,6 @@ function Login() {
                         ) : (
                             <span className="clickable-text" onClick={() => setMode('login')}>Quay lại đăng nhập</span>
                         )}
-                    </div>
-
-                    <div className="social-divider">
-                        <span>Or</span>
-                    </div>
-                    
-                    {/* LOGO NẰM NGANG VÀ FULL TRÒN */}
-                    <div className="social-icons-group">
-                        <a href="https://www.facebook.com" target="_blank" rel="noreferrer" className="social-circle">
-                            <img src={fbLogo} alt="FB" className="full-img-logo" />
-                        </a>
-                        <a href="https://www.google.com" target="_blank" rel="noreferrer" className="social-circle">
-                            <img src={ggLogo} alt="GG" className="full-img-logo" />
-                        </a>
                     </div>
                 </div>
 
