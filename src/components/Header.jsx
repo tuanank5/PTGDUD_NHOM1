@@ -61,7 +61,10 @@ export default function Header() {
             </div>
           ) : (
             <div className="action-item" 
-            onClick={logout}
+            onClick={() => {
+              logout();
+              alert("Đăng xuất thành công");
+            }}
             style={{ cursor: "pointer" }}
             >
               <span className="lux-icon">👤</span>
