@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from './pages/user/Home';
 import Login from './components/Login';
 import Footer from './components/Footer';
-import ProductForm from './components/GiaAn/ProductForm';
+import ProductForm from './pages/admin/ProductForm';
 
 import ProductListPage from './pages/user/ProductList';
 import ProductList from './components/GiaAn/ProductList';
