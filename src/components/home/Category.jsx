@@ -1,4 +1,4 @@
-// sự kiện button chuyển sang trang tương ứng
+//sự kiện chuyển sang trang /products lọc tương ứng
 
 import "../../styles/home/Category.css";
 

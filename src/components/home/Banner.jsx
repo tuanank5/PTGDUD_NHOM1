@@ -1,8 +1,10 @@
-//nhảy sang product ở <button>Mua ngay</button>
+//
 
+import { useNavigate } from "react-router-dom";
 import "../../styles/home/Banner.css";
 
 export default function Banner() {
+  const navigate = useNavigate();
   return (
     <section className="banner">
       
@@ -15,7 +17,7 @@ export default function Banner() {
       <div className="banner-content">
         <h2>SALE UP TO 50%</h2>
         <p>Bộ sưu tập mới</p>
-        <button>Mua ngay</button>
+        <button onClick={() => navigate('/products')}>Mua ngay</button>
       </div>
 
     </section>

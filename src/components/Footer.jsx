@@ -1,4 +1,4 @@
-//Tấn An
+//
 
 import "../styles/Footer.css";
 

@@ -1,377 +1,350 @@
 {
-  "users": [
-    {
-      "username": "sa",
-      "password": "1",
-      "id": 1
-    }
-  ],
-  "products": [
-    {
-      "id": 1,
-      "name": "Balo du lịch 1",
-      "price": 500000,
-      "quantity": 10,
-      "category": "dulich",
-      "image": "/data/img/dl1.jpg",
-      "tag": "HOT",
-      "type": "best-seller"
-    },
-    {
-      "id": 2,
-      "name": "Balo du lịch 2",
-      "price": 520000,
-      "quantity": 8,
-      "category": "dulich",
-      "image": "/data/img/dl2.jpg",
-      "tag": "MỚI",
-      "type": "new"
-    },
-    {
-      "id": 3,
-      "name": "Balo du lịch 3",
-      "price": 480000,
-      "quantity": 12,
-      "category": "dulich",
-      "image": "/data/img/dl3.jpg",
-      "type": "normal"
-    },
-    {
-      "id": 4,
-      "name": "Balo du lịch 4",
-      "price": 510000,
-      "quantity": 9,
-      "category": "dulich",
-      "image": "/data/img/dl4.jpg",
-      "tag": "SALE",
-      "type": "normal"
-    },
-    {
-      "id": 5,
-      "name": "Balo du lịch 5",
-      "price": 530000,
-      "quantity": 7,
-      "category": "dulich",
-      "image": "/data/img/dl5.jpg",
-      "tag": "HOT",
-      "type": "best-seller"
-    },
-    {
-      "id": 6,
-      "name": "Balo du lịch 6",
-      "price": 550000,
-      "quantity": 6,
-      "category": "dulich",
-      "image": "/data/img/dl6.jpg",
-      "tag": "MỚI",
-      "type": "new"
-    },
-    {
-      "id": 7,
-      "name": "Balo du lịch 7",
-      "price": 490000,
-      "quantity": 11,
-      "category": "dulich",
-      "image": "/data/img/dl7.jpg",
-      "type": "normal"
-    },
-    {
-      "id": 8,
-      "name": "Balo du lịch 8",
-      "price": 600000,
-      "quantity": 5,
-      "category": "dulich",
-      "image": "/data/img/dl8.jpg",
-      "tag": "HOT",
-      "type": "best-seller"
-    },
-    {
-      "id": 9,
-      "name": "Balo du lịch 9",
-      "price": 520000,
-      "quantity": 8,
-      "category": "dulich",
-      "image": "/data/img/dl9.jpg",
-      "type": "normal"
-    },
-    {
-      "id": 10,
-      "name": "Balo du lịch 10",
-      "price": 570000,
-      "quantity": 6,
-      "category": "dulich",
-      "image": "/data/img/dl10.jpg",
-      "tag": "MỚI",
-      "type": "new"
-    },
-    {
-      "id": 11,
-      "name": "Balo du lịch 11",
-      "price": 510000,
-      "quantity": 10,
-      "category": "dulich",
-      "image": "/data/img/dl11.jpg",
-      "type": "normal"
-    },
-    {
-      "id": 12,
-      "name": "Balo du lịch 12",
-      "price": 530000,
-      "quantity": 9,
-      "category": "dulich",
-      "image": "/data/img/dl12.jpg",
-      "tag": "HOT",
-      "type": "best-seller"
-    },
-    {
-      "id": 13,
-      "name": "Balo du lịch 13",
-      "price": 550000,
-      "quantity": 7,
-      "category": "dulich",
-      "image": "/data/img/dl13.jpg",
-      "type": "normal"
-    },
-    {
-      "id": 14,
-      "name": "Balo du lịch 14",
-      "price": 580000,
-      "quantity": 6,
-      "category": "dulich",
-      "image": "/data/img/dl14.jpg",
-      "tag": "MỚI",
-      "type": "new"
-    },
-    {
-      "id": 15,
-      "name": "Balo du lịch 15",
-      "price": 600000,
-      "quantity": 5,
-      "category": "dulich",
-      "image": "/data/img/dl15.jpg",
-      "tag": "HOT",
-      "type": "best-seller"
-    },
-    {
-      "id": 16,
-      "name": "Túi nam 1",
-      "price": 400000,
-      "quantity": 10,
-      "category": "nam",
-      "image": "/data/img/nam1.jpg",
-      "tag": "MỚI",
-      "type": "new"
-    },
-    {
-      "id": 17,
-      "name": "Túi nam 2",
-      "price": 420000,
-      "quantity": 9,
-      "category": "nam",
-      "image": "/data/img/nam2.jpg",
-      "type": "normal"
-    },
-    {
-      "id": 18,
-      "name": "Túi nam 3",
-      "price": 450000,
-      "quantity": 8,
-      "category": "nam",
-      "image": "/data/img/nam3.jpg",
-      "tag": "HOT",
-      "type": "best-seller"
-    },
-    {
-      "id": 19,
-      "name": "Túi nam 4",
-      "price": 470000,
-      "quantity": 7,
-      "category": "nam",
-      "image": "/data/img/nam4.jpeg",
-      "type": "normal"
-    },
-    {
-      "id": 20,
-      "name": "Túi nam 5",
-      "price": 430000,
-      "quantity": 9,
-      "category": "nam",
-      "image": "/data/img/nam5.jpeg",
-      "tag": "MỚI",
-      "type": "new"
-    },
-    {
-      "id": 21,
-      "name": "Túi nam 6",
-      "price": 420000,
-      "quantity": 8,
-      "category": "nam",
-      "image": "/data/img/nam6.jpeg",
-      "type": "normal"
-    },
-    {
-      "id": 22,
-      "name": "Túi nam 7",
-      "price": 500000,
-      "quantity": 5,
-      "category": "nam",
-      "image": "/data/img/nam7.jpg",
-      "tag": "HOT",
-      "type": "best-seller"
-    },
-    {
-      "id": 23,
-      "name": "Túi nam 8",
-      "price": 520000,
-      "quantity": 4,
-      "category": "nam",
-      "image": "/data/img/nam8.jpg",
-      "type": "normal"
-    },
-    {
-      "id": 24,
-      "name": "Túi tote 1",
-      "price": 150000,
-      "quantity": 20,
-      "category": "tote",
-      "image": "/data/img/tote1.jpg",
-      "tag": "SALE",
-      "type": "normal"
-    },
-    {
-      "id": 25,
-      "name": "Túi tote 2",
-      "price": 160000,
-      "quantity": 18,
-      "category": "tote",
-      "image": "/data/img/tote2.jpg",
-      "tag": "MỚI",
-      "type": "new"
-    },
-    {
-      "id": 26,
-      "name": "Túi tote 3",
-      "price": 170000,
-      "quantity": 17,
-      "category": "tote",
-      "image": "/data/img/tote3.jpg",
-      "type": "normal"
-    },
-    {
-      "id": 27,
-      "name": "Túi tote 4",
-      "price": 180000,
-      "quantity": 16,
-      "category": "tote",
-      "image": "/data/img/tote4.jpg",
-      "tag": "HOT",
-      "type": "best-seller"
-    },
-    {
-      "id": 28,
-      "name": "Túi tote 5",
-      "price": 190000,
-      "quantity": 15,
-      "category": "tote",
-      "image": "/data/img/tote5.jpg",
-      "type": "normal"
-    },
-    {
-      "id": 29,
-      "name": "Túi tote 6",
-      "price": 200000,
-      "quantity": 14,
-      "category": "tote",
-      "image": "/data/img/tote6.jpg",
-      "tag": "MỚI",
-      "type": "new"
-    },
-    {
-      "id": 30,
-      "name": "Túi tote 7",
-      "price": 210000,
-      "quantity": 13,
-      "category": "tote",
-      "image": "/data/img/tote7.jpg",
-      "type": "normal"
-    },
-    {
-      "id": 31,
-      "name": "Túi tote 8",
-      "price": 220000,
-      "quantity": 12,
-      "category": "tote",
-      "image": "/data/img/tote8.jpg",
-      "tag": "HOT",
-      "type": "best-seller"
-    },
-    {
-      "id": 32,
-      "name": "Túi tote 9",
-      "price": 230000,
-      "quantity": 11,
-      "category": "tote",
-      "image": "/data/img/tote9.jpg",
-      "type": "normal"
-    },
-    {
-      "id": 33,
-      "name": "Túi tote 10",
-      "price": 240000,
-      "quantity": 10,
-      "category": "tote",
-      "image": "/data/img/tote10.jpg",
-      "tag": "MỚI",
-      "type": "new"
-    },
-    {
-      "id": 40,
-      "name": "Túi nữ 1",
-      "price": 350000,
-      "quantity": 15,
-      "category": "nu",
-      "image": "/data/img/nu1.jpg",
-      "tag": "HOT",
-      "type": "best-seller"
-    },
-    {
-      "id": 41,
-      "name": "Túi nữ 2",
-      "price": 360000,
-      "quantity": 14,
-      "category": "nu",
-      "image": "/data/img/nu2.jpg",
-      "tag": "MỚI",
-      "type": "new"
-    },
-    {
-      "id": 42,
-      "name": "Túi nữ 3",
-      "price": 370000,
-      "quantity": 13,
-      "category": "nu",
-      "image": "/data/img/nu3.jpg",
-      "type": "normal"
-    },
-    {
-      "id": 54,
-      "name": "Túi nữ 15",
-      "price": 490000,
-      "quantity": 2,
-      "category": "nu",
-      "image": "/data/img/nu15.jpg",
-      "tag": "SALE",
-      "type": "normal"
-    },
-    {
-      "id": 55,
-      "name": "Túi nữ 16",
-      "price": 500000,
-      "quantity": 2,
-      "category": "nu",
-      "image": "/data/img/nu16.jpg",
-      "tag": "HOT",
-      "type": "best-seller"
-    }
-  ]
+    "users": [{
+        "username": "sa",
+        "password": "1",
+        "id": 1
+    }],
+    "products": [{
+            "id": 1,
+            "name": "Balo du lịch 1",
+            "price": 500000,
+            "quantity": 10,
+            "category": "dulich",
+            "image": "/data/img/dl1.jpg",
+            "type": "best-seller"
+        },
+        {
+            "id": 2,
+            "name": "Balo du lịch 2",
+            "price": 520000,
+            "quantity": 8,
+            "category": "dulich",
+            "image": "/data/img/dl2.jpg",
+            "type": "new"
+        },
+        {
+            "id": 3,
+            "name": "Balo du lịch 3",
+            "price": 480000,
+            "quantity": 12,
+            "category": "dulich",
+            "image": "/data/img/dl3.jpg",
+            "type": "normal"
+        },
+        {
+            "id": 4,
+            "name": "Balo du lịch 4",
+            "price": 510000,
+            "quantity": 9,
+            "category": "dulich",
+            "image": "/data/img/dl4.jpg",
+            "type": "normal"
+        },
+        {
+            "id": 5,
+            "name": "Balo du lịch 5",
+            "price": 530000,
+            "quantity": 7,
+            "category": "dulich",
+            "image": "/data/img/dl5.jpg",
+            "type": "best-seller"
+        },
+        {
+            "id": 6,
+            "name": "Balo du lịch 6",
+            "price": 550000,
+            "quantity": 6,
+            "category": "dulich",
+            "image": "/data/img/dl6.jpg",
+            "type": "new"
+        },
+        {
+            "id": 7,
+            "name": "Balo du lịch 7",
+            "price": 490000,
+            "quantity": 11,
+            "category": "dulich",
+            "image": "/data/img/dl7.jpg",
+            "type": "normal"
+        },
+        {
+            "id": 8,
+            "name": "Balo du lịch 8",
+            "price": 600000,
+            "quantity": 5,
+            "category": "dulich",
+            "image": "/data/img/dl8.jpg",
+            "type": "best-seller"
+        },
+        {
+            "id": 9,
+            "name": "Balo du lịch 9",
+            "price": 520000,
+            "quantity": 8,
+            "category": "dulich",
+            "image": "/data/img/dl9.jpg",
+            "type": "normal"
+        },
+        {
+            "id": 10,
+            "name": "Balo du lịch 10",
+            "price": 570000,
+            "quantity": 6,
+            "category": "dulich",
+            "image": "/data/img/dl10.jpg",
+            "type": "new"
+        },
+        {
+            "id": 11,
+            "name": "Balo du lịch 11",
+            "price": 510000,
+            "quantity": 10,
+            "category": "dulich",
+            "image": "/data/img/dl11.jpg",
+            "type": "normal"
+        },
+        {
+            "id": 12,
+            "name": "Balo du lịch 12",
+            "price": 530000,
+            "quantity": 9,
+            "category": "dulich",
+            "image": "/data/img/dl12.jpg",
+            "type": "best-seller"
+        },
+        {
+            "id": 13,
+            "name": "Balo du lịch 13",
+            "price": 550000,
+            "quantity": 7,
+            "category": "dulich",
+            "image": "/data/img/dl13.jpg",
+            "type": "normal"
+        },
+        {
+            "id": 14,
+            "name": "Balo du lịch 14",
+            "price": 580000,
+            "quantity": 6,
+            "category": "dulich",
+            "image": "/data/img/dl14.jpg",
+            "type": "new"
+        },
+        {
+            "id": 15,
+            "name": "Balo du lịch 15",
+            "price": 600000,
+            "quantity": 5,
+            "category": "dulich",
+            "image": "/data/img/dl15.jpg",
+            "type": "best-seller"
+        },
+        {
+            "id": 16,
+            "name": "Túi nam 1",
+            "price": 400000,
+            "quantity": 10,
+            "category": "nam",
+            "image": "/data/img/nam1.jpg",
+            "type": "new"
+        },
+        {
+            "id": 17,
+            "name": "Túi nam 2",
+            "price": 420000,
+            "quantity": 9,
+            "category": "nam",
+            "image": "/data/img/nam2.jpg",
+            "type": "normal"
+        },
+        {
+            "id": 18,
+            "name": "Túi nam 3",
+            "price": 450000,
+            "quantity": 8,
+            "category": "nam",
+            "image": "/data/img/nam3.jpg",
+            "type": "best-seller"
+        },
+        {
+            "id": 19,
+            "name": "Túi nam 4",
+            "price": 470000,
+            "quantity": 7,
+            "category": "nam",
+            "image": "/data/img/nam4.jpeg",
+            "type": "normal"
+        },
+        {
+            "id": 20,
+            "name": "Túi nam 5",
+            "price": 430000,
+            "quantity": 9,
+            "category": "nam",
+            "image": "/data/img/nam5.jpeg",
+            "type": "new"
+        },
+        {
+            "id": 21,
+            "name": "Túi nam 6",
+            "price": 420000,
+            "quantity": 8,
+            "category": "nam",
+            "image": "/data/img/nam6.jpeg",
+            "type": "normal"
+        },
+        {
+            "id": 22,
+            "name": "Túi nam 7",
+            "price": 500000,
+            "quantity": 5,
+            "category": "nam",
+            "image": "/data/img/nam7.jpg",
+            "type": "best-seller"
+        },
+        {
+            "id": 23,
+            "name": "Túi nam 8",
+            "price": 520000,
+            "quantity": 4,
+            "category": "nam",
+            "image": "/data/img/nam8.jpg",
+            "type": "normal"
+        },
+        {
+            "id": 24,
+            "name": "Túi tote 1",
+            "price": 150000,
+            "quantity": 20,
+            "category": "tote",
+            "image": "/data/img/tote1.jpg",
+            "type": "normal"
+        },
+        {
+            "id": 25,
+            "name": "Túi tote 2",
+            "price": 160000,
+            "quantity": 18,
+            "category": "tote",
+            "image": "/data/img/tote2.jpg",
+            "type": "new"
+        },
+        {
+            "id": 26,
+            "name": "Túi tote 3",
+            "price": 170000,
+            "quantity": 17,
+            "category": "tote",
+            "image": "/data/img/tote3.jpg",
+            "type": "normal"
+        },
+        {
+            "id": 27,
+            "name": "Túi tote 4",
+            "price": 180000,
+            "quantity": 16,
+            "category": "tote",
+            "image": "/data/img/tote4.jpg",
+            "type": "best-seller"
+        },
+        {
+            "id": 28,
+            "name": "Túi tote 5",
+            "price": 190000,
+            "quantity": 15,
+            "category": "tote",
+            "image": "/data/img/tote5.jpg",
+            "type": "normal"
+        },
+        {
+            "id": 29,
+            "name": "Túi tote 6",
+            "price": 200000,
+            "quantity": 14,
+            "category": "tote",
+            "image": "/data/img/tote6.jpg",
+            "type": "new"
+        },
+        {
+            "id": 30,
+            "name": "Túi tote 7",
+            "price": 210000,
+            "quantity": 13,
+            "category": "tote",
+            "image": "/data/img/tote7.jpg",
+            "type": "normal"
+        },
+        {
+            "id": 31,
+            "name": "Túi tote 8",
+            "price": 220000,
+            "quantity": 12,
+            "category": "tote",
+            "image": "/data/img/tote8.jpg",
+            "type": "best-seller"
+        },
+        {
+            "id": 32,
+            "name": "Túi tote 9",
+            "price": 230000,
+            "quantity": 11,
+            "category": "tote",
+            "image": "/data/img/tote9.jpg",
+            "type": "normal"
+        },
+        {
+            "id": 33,
+            "name": "Túi tote 10",
+            "price": 240000,
+            "quantity": 10,
+            "category": "tote",
+            "image": "/data/img/tote10.jpg",
+            "type": "new"
+        },
+        {
+            "id": 40,
+            "name": "Túi nữ 1",
+            "price": 350000,
+            "quantity": 15,
+            "category": "nu",
+            "image": "/data/img/nu1.jpg",
+            "type": "best-seller"
+        },
+        {
+            "id": 41,
+            "name": "Túi nữ 2",
+            "price": 360000,
+            "quantity": 14,
+            "category": "nu",
+            "image": "/data/img/nu2.jpg",
+            "type": "new"
+        },
+        {
+            "id": 42,
+            "name": "Túi nữ 3",
+            "price": 370000,
+            "quantity": 13,
+            "category": "nu",
+            "image": "/data/img/nu3.jpg",
+            "type": "normal"
+        },
+        {
+            "id": 54,
+            "name": "Túi nữ 15",
+            "price": 490000,
+            "quantity": 2,
+            "category": "nu",
+            "image": "/data/img/nu15.jpg",
+            "type": "normal"
+        },
+        {
+            "id": 55,
+            "name": "Túi nữ 16",
+            "price": 500000,
+            "quantity": 2,
+            "category": "nu",
+            "image": "/data/img/nu16.jpg",
+            "type": "best-seller"
+        }
+    ]
 }
