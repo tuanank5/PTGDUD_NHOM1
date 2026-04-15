@@ -1,13 +1,10 @@
 //
 
 import { useContext, useState } from "react";
-import useAuth from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import "../styles/Login.css"; 
 
 import loginBg from "/images/login.jpg"; 
-import fbLogo from "/images/fb.jpg"; 
-import ggLogo from "/images/gg.jpg"; 
 import { AuthContext } from "../context/AuthContext";
 
 function Login() {
@@ -24,9 +21,13 @@ function Login() {
         e.preventDefault();
         if (mode === 'login') {
             try {
-                await login(username, password);
+                const user = await login(username, password);
                 alert("Đăng nhập thành công!");
-                navigate("/"); 
+                if (user.role === "user") {
+                    navigate("/"); 
+                } else if (user.role === "admin") {
+                    navigate("/admin/dashboard"); 
+                }
             } catch (err) {
                 alert(err.message);
             }

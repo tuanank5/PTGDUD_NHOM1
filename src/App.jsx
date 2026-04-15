@@ -26,13 +26,15 @@ function App() {
 
   const routes = [
     { path: "/", element: <Home /> },
-    { path: "/login", element: user ? <Navigate to="/" replace /> : <Login /> },
-    { path: "/productForm", element: <ProductForm /> },
+    { path: "/login", element: user !== null ? <Navigate to="/" replace /> : <Login /> },
     // { path: "/products", element: <ProductList products={products} /> }, cũ
     { path: "/products", element: <ProductListPage /> },
     { path: "/about", element: <AboutUs /> },
     { path: "/favorites", element: <FavoritesPage /> }, 
-    { path: "/dashboard", element: <Dashboard /> }, 
+
+    //admin
+    { path: "/admin/dashboard", element: user?.role === "admin" ? <Dashboard /> : <Navigate to="/" replace /> }, 
+    { path: "/admin/productForm", element: user?.role === "admin" ? <ProductForm /> : <Navigate to="/" replace /> },
   ];
 
   return (

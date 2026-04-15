@@ -17,7 +17,7 @@ function useAuth() {
         const users = Array.isArray(usersData) ? usersData : [];
         const ex = users.find((u) => u.username === username);
         if (ex) throw new Error("Users exists");
-        const newUser = { username, password };
+        const newUser = { username, password, role: "user" };
 
         await registerUser(newUser);
         return newUser;

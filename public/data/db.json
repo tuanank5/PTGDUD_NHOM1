@@ -2,6 +2,7 @@
     "users": [{
         "username": "sa",
         "password": "1",
+        "role": "admin",
         "id": 1
     }],
     "products": [{

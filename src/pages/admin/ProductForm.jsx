@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProducts, addProduct, updateProduct, deleteProduct} from "../../api/productsAPI";
+import Header from "./Header";
 
 export default function ProductForm() {
   const [name, setName] = useState("");
@@ -64,6 +65,16 @@ export default function ProductForm() {
   };
 
   return (
+    <>
+    <Header />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <div style={{ padding: 20 }}>
       <input 
         type="text" 
@@ -156,5 +167,6 @@ export default function ProductForm() {
         </tbody>
       </table>
     </div>
+    </>
   );
 }
