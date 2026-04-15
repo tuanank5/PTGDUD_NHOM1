@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import Header from '../components/Header';
-import Menu from '../components/Menu';
-import Footer from '../components/Footer';
-import '../styles/AboutUs.css';
+import Header from '../../components/Header';
+import Menu from '../../components/Menu';
+import '../../styles/AboutUs.css';
 
 const AboutUs = () => {
   useEffect(() => {

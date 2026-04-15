@@ -1,8 +1,8 @@
 import React from 'react';
-import { getProducts } from "../api/productsAPI";
-import Header from "../components/Header";
-import Menu from "../components/Menu";
-import ProductCategory from "../components/ProductList/ProductCategory";
+import { getProducts } from "../../api/productsAPI";
+import Header from "../../components/Header";
+import Menu from "../../components/Menu";
+import ProductCategory from "../../components/ProductList/ProductCategory";
 
 export default function ProductListPage() {
   return (

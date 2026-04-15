@@ -1,8 +1,8 @@
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FavoritesContext } from "../context/FavoritesContext";
-import Header from "../components/Header";
-import "../styles/FavoritesPage.css";
+import { FavoritesContext } from "../../context/FavoritesContext";
+import Header from "../../components/Header";
+import "../../styles/FavoritesPage.css";
 
 export default function FavoritesPage() {
   const { favorites, toggleFavorite } = useContext(FavoritesContext);

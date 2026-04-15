@@ -1,15 +1,15 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './pages/Home';
+import Home from './pages/user/Home';
 import Login from './components/Login';
 import Footer from './components/Footer';
 import ProductForm from './components/GiaAn/ProductForm';
 
-import ProductListPage from './pages/ProductList';
+import ProductListPage from './pages/user/ProductList';
 import ProductList from './components/GiaAn/ProductList';
 
-import FavoritesPage from "./pages/FavoritesPage";
-import AboutUs from './pages/AboutUs';
+import FavoritesPage from "./pages/user/FavoritesPage";
+import AboutUs from './pages/user/AboutUs';
 import { AppProviders } from './context/AppProvider';
 import { useEffect, useState } from 'react';
 import { getProducts } from './api/productsAPI';
