@@ -1,15 +1,14 @@
-
 .category-page {
   background-color: #fdf9f3;
-  padding-top: 200px; 
+  padding-top: 200px;
   padding-bottom: 80px;
 }
 
 .category-container {
-  max-width: 1850px; 
+  max-width: 1850px;
   margin: 0 auto;
   display: flex;
-  gap: 70px; 
+  gap: 70px;
   padding: 0 50px;
 }
 
@@ -19,7 +18,7 @@
   background: white;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
   height: fit-content;
   position: sticky;
   top: 180px;
@@ -31,7 +30,7 @@
 
 .filter-main-title {
   font-size: 18px;
-  color: #5C4033;
+  color: #5c4033;
   font-weight: 800;
   border-bottom: 2px solid #c5a572;
   padding-bottom: 8px;
@@ -40,11 +39,11 @@
 }
 
 .sub-group-title {
-  font-size: 15px;     
-  color: #777;         
+  font-size: 15px;
+  color: #777;
   margin: 18px 0 10px 0;
-  font-style: italic;   
-  font-weight: 700;     
+  font-style: italic;
+  font-weight: 700;
   display: block;
 }
 
@@ -73,14 +72,14 @@
 .price-range input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #E8D5C4;
+  border: 1px solid #e8d5c4;
   border-radius: 6px;
 }
 
 .btn-apply-filter {
   width: 100%;
   padding: 12px;
-  background-color: #5C4033;
+  background-color: #5c4033;
   color: white;
   border: none;
   font-weight: bold;
@@ -98,9 +97,9 @@
 
 .product-grid-category {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  column-gap: 30px; 
-  row-gap: 80px; 
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 30px;
+  row-gap: 80px;
 }
 
 .product-card-luxury {
@@ -116,7 +115,7 @@
 
 .product-card-luxury:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
 }
 
 .product-img-box {
@@ -137,17 +136,26 @@
 
 .badge-new {
   position: absolute;
-  top: 10px; left: 10px;
-  background: #e3f9f1; color: #27ae60;
-  padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: bold;
+  top: 10px;
+  left: 10px;
+  background: #e3f9f1;
+  color: #27ae60;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .heart-btn {
   position: absolute;
-  top: 10px; right: 10px;
-  background: white; border: none;
-  width: 35px; height: 35px; border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .product-name {
@@ -159,14 +167,14 @@
 }
 
 .product-price {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    color: #c5a572; /* Màu vàng đồng luxury */
-    font-weight: 600;
-    margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: #c5a572; /* Màu vàng đồng luxury */
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-.btn-buy-now {
+.btn-add-to-cart {
   margin-top: auto;
   padding: 12px;
   background: #c5a572;
