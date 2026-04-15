@@ -1,6 +1,6 @@
 //
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import useAuth from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import "../styles/Login.css"; 
@@ -8,10 +8,11 @@ import "../styles/Login.css";
 import loginBg from "/images/login.jpg"; 
 import fbLogo from "/images/fb.jpg"; 
 import ggLogo from "/images/gg.jpg"; 
+import { AuthContext } from "../context/AuthContext";
 
 function Login() {
     const navigate = useNavigate();
-    const { login, register } = useAuth();
+    const { login, register } = useContext(AuthContext);
     
     const [mode, setMode] = useState('login'); 
     const [username, setUsername] = useState("");
@@ -27,7 +28,7 @@ function Login() {
                 alert("Đăng nhập thành công!");
                 navigate("/"); 
             } catch (err) {
-                alert("Sai tài khoản hoặc mật khẩu!");
+                alert(err.message);
             }
         } else if (mode === 'register') {
             if (password !== confirmPW) {

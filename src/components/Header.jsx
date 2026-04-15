@@ -4,9 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react"; 
 import "../styles/Header.css";
 import { FavoritesContext } from "../context/FavoritesContext";
+import { AuthContext } from "../context/AuthContext";
 
 export default function Header() {
   const navigate = useNavigate();
+
+  const { user, logout } = useContext(AuthContext);
   
   const { favorites } = useContext(FavoritesContext);
 
@@ -47,15 +50,24 @@ export default function Header() {
             </div>
             <span className="lux-label">Giỏ hàng</span>
           </div>
-
-          <div 
-            className="action-item" 
+          
+          {!user ? (
+            <div className="action-item" 
             onClick={() => navigate('/login')} 
             style={{ cursor: "pointer" }}
-          >
-            <span className="lux-icon">👤</span>
-            <span className="lux-label">Tài khoản</span>
-          </div>
+            >
+              <span className="lux-icon">👤</span>
+              <span className="lux-label">Tài khoản</span>
+            </div>
+          ) : (
+            <div className="action-item" 
+            onClick={logout}
+            style={{ cursor: "pointer" }}
+            >
+              <span className="lux-icon">👤</span>
+              <span className="lux-label">Đăng xuất</span>
+            </div>
+          )}
         </div>
       </div>
     </header>
