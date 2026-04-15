@@ -8,6 +8,7 @@ export default function ProductForm() {
   const [quantity, setQuantity] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
+  const [type, setType] = useState("");
   const [id, setId] = useState(null);
 
   const [products, setProducts] = useState([]);
@@ -17,7 +18,15 @@ export default function ProductForm() {
   }, []);
   
   const handleSubmit = async () => {
-    if (!name || !price || !quantity || !category || !image) return alert("Vui lòng nhập đầy đủ thông tin sản phẩm!");
+    if (!name || !price || !quantity || !category || !image || !type) return alert("Vui lòng nhập đầy đủ thông tin sản phẩm!");
+
+    if (isNaN(price)) {
+      return alert("Giá phải là số!");
+    }
+
+    if (isNaN(quantity)) {
+      return alert("Số lượng phải là số!");
+    }
 
     const newProduct = {
       name,
@@ -25,6 +34,7 @@ export default function ProductForm() {
       quantity: Number(quantity),
       category,
       image,
+      type,
     };
 
     if (id) {
@@ -44,7 +54,10 @@ export default function ProductForm() {
     setQuantity("");
     setCategory("");
     setImage("");
+    setType("");
     setId(null);
+
+    alert("Thêm thành công")
   };
 
   const handleUpdate = (p) => {
@@ -67,6 +80,8 @@ export default function ProductForm() {
   return (
     <>
     <Header />
+    <br />
+    <br />
     <br />
     <br />
     <br />
@@ -125,6 +140,17 @@ export default function ProductForm() {
         }}
       />
       <br />
+      <select
+        value={type}
+        onChange={(e) => setType(e.target.value)}
+      >
+        <option value="">-- Chọn kiểu --</option>
+        <option value="new">New</option>
+        <option value="normal">Normal</option>
+        <option value="best-seller">Best seller</option>
+      </select>
+      
+      <br />
       <br />
       <button onClick={handleSubmit}>{id ? "Cập nhật" : "Thêm"}</button>
 
@@ -138,6 +164,7 @@ export default function ProductForm() {
             <th>Số lượng</th>
             <th>Loại</th>
             <th>Ảnh</th>
+            <th>Kiểu</th>
             <th></th>
           </tr>
         </thead>
@@ -153,7 +180,8 @@ export default function ProductForm() {
               <td>
                 <img src={p.image} alt="" width="60" />
               </td>
-              
+              <td>{p.type}</td>
+
               <td>
                 <button onClick={() => handleUpdate(p)}>
                   Cập nhật

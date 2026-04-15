@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header className="header-luxury">
       <div className="header-wrapper">
-        <div className="logo-luxury" onClick={() => navigate('/')} style={{ cursor: "pointer" }}>
+        <div className="logo-luxury" onClick={() => navigate('/admin/dashboard')} style={{ cursor: "pointer" }}>
           <span className="brand-name">AAAAA</span>
           <span className="brand-sub">LUXURY BAGS</span>
         </div>
