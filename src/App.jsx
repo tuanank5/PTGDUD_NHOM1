@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from './pages/user/Home';
 import Login from './components/Login';
 import Footer from './components/Footer';
@@ -13,6 +13,7 @@ import AboutUs from './pages/user/AboutUs';
 import { AppProviders } from './context/AppProvider';
 import { useEffect, useState } from 'react';
 import { getProducts } from './api/productsAPI';
+import Dashboard from './pages/admin/Dashboard';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -21,14 +22,17 @@ function App() {
     getProducts().then(setProducts);
   }, []);
 
+  const user = JSON.parse(localStorage.getItem("user"));
+
   const routes = [
     { path: "/", element: <Home /> },
-    { path: "/login", element: <Login /> },
+    { path: "/login", element: user ? <Navigate to="/" replace /> : <Login /> },
     { path: "/productForm", element: <ProductForm /> },
     // { path: "/products", element: <ProductList products={products} /> }, cũ
     { path: "/products", element: <ProductListPage /> },
     { path: "/about", element: <AboutUs /> },
     { path: "/favorites", element: <FavoritesPage /> }, 
+    { path: "/dashboard", element: <Dashboard /> }, 
   ];
 
   return (
