@@ -11,7 +11,7 @@ import ProductList from './components/GiaAn/ProductList';
 
 import FavoritesPage from "./pages/FavoritesPage";
 import AboutUs from './pages/AboutUs';
-import { FavoritesProvider } from "./context/FavoritesContext";
+import { AppProviders } from './context/AppProvider';
 import { useEffect, useState } from 'react';
 import { getProducts } from './api/productsAPI';
 
@@ -34,8 +34,7 @@ function App() {
   ];
 
   return (
-    // 3. Bọc FavoritesProvider ở đây là chuẩn nhất
-    <FavoritesProvider>
+    <AppProviders>
       <BrowserRouter>
         <div className="app-container">
           <div className="main-content">
@@ -48,7 +47,7 @@ function App() {
           <Footer />
         </div>
       </BrowserRouter>
-    </FavoritesProvider>
+    </AppProviders>
   );
 }
 
