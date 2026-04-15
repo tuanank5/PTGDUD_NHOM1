@@ -1,10 +1,17 @@
 {
     "users": [{
-        "username": "sa",
-        "password": "1",
-        "role": "admin",
-        "id": 1
-    }],
+            "username": "sa",
+            "password": "1",
+            "role": "admin",
+            "id": 1
+        },
+        {
+            "username": "u",
+            "password": "1",
+            "role": "user",
+            "id": 2
+        }
+    ],
     "products": [{
             "id": 1,
             "name": "Balo du lịch 1",
