@@ -1,6 +1,6 @@
 //
 
-import { useContext, useState } from "react";
+import { use, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Login.css"; 
 
@@ -9,7 +9,7 @@ import { AuthContext } from "../context/AuthContext";
 
 function Login() {
     const navigate = useNavigate();
-    const { login, register } = useContext(AuthContext);
+    const { login, register, user } = useContext(AuthContext);
     
     const [mode, setMode] = useState('login'); 
     const [username, setUsername] = useState("");
@@ -21,12 +21,12 @@ function Login() {
         e.preventDefault();
         if (mode === 'login') {
             try {
-                const user = await login(username, password);
+                const user = await login(username, password); // 👈 lấy ngay
                 alert("Đăng nhập thành công!");
-                if (user.role === "user") {
-                    navigate("/"); 
-                } else if (user.role === "admin") {
-                    navigate("/admin/dashboard"); 
+                if (user.role === "admin") {
+                    navigate("/admin/dashboard");
+                } else {
+                    navigate("/");
                 }
             } catch (err) {
                 alert(err.message);
@@ -51,6 +51,20 @@ function Login() {
             alert("Yêu cầu khôi phục đã gửi đến tài khoản: " + usernameForgot);
             setMode('login');
         }
+    }
+
+    if (user?.role === "admin") {
+        return (
+            <>
+            {navigate("/admin/dashboard")}
+            </>
+        )
+    } else if (user?.role === "user") {
+        return (
+            <>
+            {navigate("/")}
+            </>
+        )
     }
 
     return (

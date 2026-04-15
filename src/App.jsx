@@ -22,19 +22,17 @@ function App() {
     getProducts().then(setProducts);
   }, []);
 
-  const user = JSON.parse(localStorage.getItem("user"));
-
   const routes = [
     { path: "/", element: <Home /> },
-    { path: "/login", element: user !== null ? <Navigate to="/" replace /> : <Login /> },
+    { path: "/login", element: <Login /> },
     // { path: "/products", element: <ProductList products={products} /> }, cũ
     { path: "/products", element: <ProductListPage /> },
     { path: "/about", element: <AboutUs /> },
     { path: "/favorites", element: <FavoritesPage /> }, 
 
     //admin
-    { path: "/admin/dashboard", element: user?.role === "admin" ? <Dashboard /> : <Navigate to="/" replace /> }, 
-    { path: "/admin/productForm", element: user?.role === "admin" ? <ProductForm /> : <Navigate to="/" replace /> },
+    { path: "/admin/dashboard", element: <Dashboard /> },
+    { path: "/admin/productForm", element: <ProductForm /> },
   ];
 
   return (
