@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import ProductForm from './pages/admin/ProductForm';
 
 import ProductListPage from './pages/user/ProductList';
-import ProductList from './components/GiaAn/ProductList';
+// import ProductList from './components/GiaAn/ProductList';
 
 import FavoritesPage from "./pages/user/FavoritesPage";
 import AboutUs from './pages/user/AboutUs';
@@ -14,6 +14,7 @@ import { AppProviders } from './context/AppProvider';
 import { useEffect, useState } from 'react';
 import { getProducts } from './api/productsAPI';
 import Dashboard from './pages/admin/Dashboard';
+import ProductCategory from './components/ProductList/ProductCategory';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -25,11 +26,11 @@ function App() {
   const routes = [
     { path: "/", element: <Home /> },
     { path: "/login", element: <Login /> },
-    // { path: "/products", element: <ProductList products={products} /> }, cũ
+    // { path: "/products", element: <ProductList products={products} /> }, 
     { path: "/products", element: <ProductListPage /> },
     { path: "/about", element: <AboutUs /> },
     { path: "/favorites", element: <FavoritesPage /> }, 
-
+    // { path: "/category", element: <ProductCategory /> }, 
     //admin
     { path: "/admin/dashboard", element: <Dashboard /> },
     { path: "/admin/productForm", element: <ProductForm /> },

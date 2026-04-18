@@ -29,7 +29,7 @@ export default function Category() {
               </div>
 
               <div className="cat-image-box">
-                <img src={item.img} alt={item.name} />
+                <img src={item.img} alt={item.name}  />
               </div>
             </div>
           ))}

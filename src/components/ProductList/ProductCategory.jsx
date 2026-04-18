@@ -1,15 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { getProducts } from "../../api/productsAPI";
 import "../../styles/ProductList/ProductCategory.css";
-
+import { useLocation } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
+import { FavoritesContext } from "../../context/FavoritesContext";
 
-export default function ProductCategory() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [favorites, setFavorites] = useState({});
-
+  const location = useLocation();
   const { addToCart } = useCart();
+  const { favorites, toggleFavorite } = useContext(FavoritesContext);
+
+  // State cho filter
+  const [typeFilter, setTypeFilter] = useState({
+    "best-seller": false,
+    "new": false,
+    "normal": false,
+  });
+  const [sortPrice, setSortPrice] = useState("");
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -22,12 +30,48 @@ export default function ProductCategory() {
         setLoading(false);
       }
     };
-
     fetchProducts();
   }, []);
 
-  const toggleFavorite = (id) => {
-    setFavorites((prev) => ({ ...prev, [id]: !prev[id] }));
+  // Lấy category từ query string
+  const params = new URLSearchParams(location.search);
+  const category = params.get("category");
+
+  // Lọc sản phẩm theo category nếu có
+  let filteredProducts = category
+    ? products.filter((item) => item.category === category)
+    : products;
+
+  // Lọc theo type
+  const checkedTypes = Object.keys(typeFilter).filter((key) => typeFilter[key]);
+  if (checkedTypes.length > 0) {
+    filteredProducts = filteredProducts.filter((item) => checkedTypes.includes(item.type));
+  }
+
+  // Sắp xếp theo giá
+  if (sortPrice === "asc") {
+    filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
+  } else if (sortPrice === "desc") {
+    filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);
+  }
+
+  // Không dùng toggleFavorite nội bộ nữa, dùng context
+
+  // Xử lý khi click checkbox
+  const handleTypeChange = (e) => {
+    const { name, checked } = e.target;
+    setTypeFilter((prev) => ({ ...prev, [name]: checked }));
+  };
+
+  // Xử lý khi chọn sort
+  const handleSortChange = (e) => {
+    setSortPrice(e.target.value);
+  };
+
+  // Xử lý khi bấm nút lọc (nếu muốn lọc ngay khi click thì bỏ form và button)
+  const handleFilterSubmit = (e) => {
+    e.preventDefault();
+    // Đã lọc realtime ở trên, không cần làm gì thêm
   };
 
   if (loading) {
@@ -38,163 +82,71 @@ export default function ProductCategory() {
     <div className="category-page">
       <div className="category-container">
         <aside className="filter-sidebar">
-          {/* TÚI NỮ */}
-          <div className="filter-section">
-            <h3 className="filter-main-title">Túi Nữ</h3>
-            <div className="filter-group">
-              <h4 className="sub-group-title">Danh mục</h4>
-              <label>
-                <input type="checkbox" /> Túi đeo chéo
-              </label>
-              <label>
-                <input type="checkbox" /> Túi đeo vai
-              </label>
-              <label>
-                <input type="checkbox" /> Túi xách tay
-              </label>
-              <label>
-                <input type="checkbox" /> Túi mini
-              </label>
+          <form onSubmit={handleFilterSubmit}>
+            <div className="filter-section">
+              <h3 className="filter-main-title">Lọc theo loại</h3>
+              <div className="filter-group">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="best-seller"
+                    checked={typeFilter["best-seller"]}
+                    onChange={handleTypeChange}
+                  />
+                  Best-seller
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="new"
+                    checked={typeFilter["new"]}
+                    onChange={handleTypeChange}
+                  />
+                  New
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="normal"
+                    checked={typeFilter["normal"]}
+                    onChange={handleTypeChange}
+                  />
+                  Normal
+                </label>
+              </div>
             </div>
-            <div className="filter-group">
-              <h4 className="sub-group-title">Phụ kiện</h4>
-              <label>
-                <input type="checkbox" /> Ví nữ
-              </label>
-              <label>
-                <input type="checkbox" /> Clutch dự tiệc
-              </label>
-              <label>
-                <input type="checkbox" /> Túi cao cấp
-              </label>
+            <div className="filter-section">
+              <h3 className="filter-main-title">Sắp xếp theo giá</h3>
+              <select value={sortPrice} onChange={handleSortChange}>
+                <option value="">-- Chọn --</option>
+                <option value="asc">Giá tăng dần</option>
+                <option value="desc">Giá giảm dần</option>
+              </select>
             </div>
-          </div>
-
-          {/* TÚI NAM */}
-          <div className="filter-section">
-            <h3 className="filter-main-title">Túi Nam</h3>
-            <div className="filter-group">
-              <h4 className="sub-group-title">Phổ biến</h4>
-              <label>
-                <input type="checkbox" /> Túi đeo chéo nam
-              </label>
-              <label>
-                <input type="checkbox" /> Túi công sở
-              </label>
-              <label>
-                <input type="checkbox" /> Balo nam
-              </label>
-            </div>
-            <div className="filter-group">
-              <h4 className="sub-group-title">Khác</h4>
-              <label>
-                <input type="checkbox" /> Túi du lịch
-              </label>
-              <label>
-                <input type="checkbox" /> Ví nam
-              </label>
-            </div>
-          </div>
-
-          {/* TÚI TOTE */}
-          <div className="filter-section">
-            <h3 className="filter-main-title">Túi Tote</h3>
-            <div className="filter-group">
-              <h4 className="sub-group-title">Chất liệu</h4>
-              <label>
-                <input type="checkbox" /> Tote vải
-              </label>
-              <label>
-                <input type="checkbox" /> Tote da
-              </label>
-              <label>
-                <input type="checkbox" /> Tote canvas
-              </label>
-            </div>
-            <div className="filter-group">
-              <h4 className="sub-group-title">Kiểu dáng</h4>
-              <label>
-                <input type="checkbox" /> Tote mini
-              </label>
-              <label>
-                <input type="checkbox" /> Tote basic
-              </label>
-            </div>
-          </div>
-
-          {/* TÚI TRẺ EM */}
-          <div className="filter-section">
-            <h3 className="filter-main-title">Túi Trẻ Em</h3>
-            <div className="filter-group">
-              <h4 className="sub-group-title">Bé trai</h4>
-              <label>
-                <input type="checkbox" /> Balo
-              </label>
-              <label>
-                <input type="checkbox" /> Túi hoạt hình
-              </label>
-            </div>
-            <div className="filter-group">
-              <h4 className="sub-group-title">Bé gái</h4>
-              <label>
-                <input type="checkbox" /> Túi mini
-              </label>
-              <label>
-                <input type="checkbox" /> Túi dễ thương
-              </label>
-            </div>
-          </div>
-
-          {/* KÍCH THƯỚC */}
-          <div className="filter-section">
-            <h3 className="filter-main-title">Kích thước</h3>
-            <div className="filter-group">
-              <label>
-                <input type="checkbox" /> Size nhỏ (Mini)
-              </label>
-              <label>
-                <input type="checkbox" /> Size 23
-              </label>
-              <label>
-                <input type="checkbox" /> Size 27
-              </label>
-              <label>
-                <input type="checkbox" /> Size lớn
-              </label>
-            </div>
-          </div>
-
-          {/* GIÁ */}
-          <div className="filter-section">
-            <h3 className="filter-main-title">Giá</h3>
-            <div className="price-range">
-              <input type="number" placeholder="min" />
-              <span>-</span>
-              <input type="number" placeholder="max" />
-            </div>
-            <button className="btn-apply-filter">Áp dụng bộ lọc</button>
-          </div>
+            <button className="btn-apply-filter" type="submit">Lọc</button>
+          </form>
         </aside>
 
         {/* NỘI DUNG SẢN PHẨM */}
         <main className="product-content">
           <h2 className="page-title">Danh Mục Sản Phẩm</h2>
           <div className="product-grid-category">
-            {products.map((item) => (
+            {filteredProducts.map((item) => (
               <div className="product-card-luxury" key={item.id}>
                 <div className="product-img-box">
-                  <div className="badge-new">Mới</div>
+                  <div className="badge-new">{item.type}</div>
                   <img src={item.image} alt={item.name} />
                   <button
-                    className={`heart-btn ${favorites[item.id] ? "active" : ""}`}
-                    onClick={() => toggleFavorite(item.id)}
+                    className={`heart-btn ${favorites.find(f => f.id === item.id) ? "active" : ""}`}
+                    onClick={() => toggleFavorite(item)}
                   >
-                    {favorites[item.id] ? "❤️" : "🤍"}
+                    {favorites.find(f => f.id === item.id) ? "❤️" : "🤍"}
                   </button>
                 </div>
 
                 <div className="product-info-box">
                   <h3 className="product-name">{item.name}</h3>
+                  <p className="product-quantity">Số lượng : {item.quantity}</p>
                   <p className="product-price">{item.price}</p>
                   <button
                     className="btn-add-to-cart"
@@ -211,4 +163,3 @@ export default function ProductCategory() {
     </div>
   );
 }
-

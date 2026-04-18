@@ -69,6 +69,9 @@ export default function ProductSection() {
                   <p className="product-price">
                     {item.price?.toLocaleString()} VND
                   </p>
+                  <p className="product-quantity">
+                    Số lượng: {item.quantity}
+                  </p>
                   <button
                     className="btn-add-to-cart"
                     onClick={() => {

@@ -7,10 +7,10 @@ export default function Menu() {
  const menuItems = [
   { title: "Trang chủ", path: "/" },
   { title: "Sản phẩm", path: "/products" },
-  { title: "Túi nữ", path: "/products" },
-  { title: "Túi nam", path: "/products" },
-  { title: "Túi tote", path: "/products" },
-  { title: "Túi du lịch", path: "/products" },
+  { title: "Túi nữ", path: "/products", category: "nu" },
+  { title: "Túi nam", path: "/products", category: "nam" },
+  { title: "Túi tote", path: "/products", category: "tote" },
+  { title: "Túi du lịch", path: "/products", category: "dulich" },
   { title: "Giới thiệu", path: "/about" },
 ];
 
@@ -21,7 +21,10 @@ export default function Menu() {
           {menuItems.map((item, index) => (
             <li key={index} className="menu-item">
               {!item.mega ? (
-                <Link to={item.path} className="menu-link">
+                <Link
+                  to={item.category ? `${item.path}?category=${item.category}` : item.path}
+                  className="menu-link"
+                >
                   {item.title}
                 </Link>
               ) : (
