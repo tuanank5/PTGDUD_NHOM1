@@ -1,7 +1,10 @@
+import React from "react";
 import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
 import "../styles/CartDrawer.css";
 
 export default function CartDrawer({ isOpen, onClose }) {
+  const navigate = useNavigate();
   const {
     cart,
     removeFromCart,
@@ -9,6 +12,11 @@ export default function CartDrawer({ isOpen, onClose }) {
     increaseQuantity,
     decreaseQuantity,
   } = useCart();
+
+  const handleGoToCheckout = () => {
+    onClose(); 
+    navigate("/checkout"); 
+  };
 
   return (
     <>
@@ -65,7 +73,9 @@ export default function CartDrawer({ isOpen, onClose }) {
               <span>TỔNG TIỀN:</span>
               <strong>{totalPrice.toLocaleString("vi-VN")}đ</strong>
             </div>
-            <button className="cd-checkout">THANH TOÁN</button>
+           <button className="cd-checkout" onClick={handleGoToCheckout}>
+              THANH TOÁN
+            </button>
           </div>
         )}
       </div>

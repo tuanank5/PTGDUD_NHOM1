@@ -5,6 +5,8 @@ import { useLocation } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { FavoritesContext } from "../../context/FavoritesContext";
 
+// PHẢI CÓ DÒNG NÀY ĐỂ ĐỊNH NGHĨA COMPONENT
+export default function ProductCategory() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const location = useLocation();
@@ -37,7 +39,7 @@ import { FavoritesContext } from "../../context/FavoritesContext";
   const params = new URLSearchParams(location.search);
   const category = params.get("category");
 
-  // Lọc sản phẩm theo category nếu có
+  // Lọc sản phẩm theo category
   let filteredProducts = category
     ? products.filter((item) => item.category === category)
     : products;
@@ -55,23 +57,17 @@ import { FavoritesContext } from "../../context/FavoritesContext";
     filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);
   }
 
-  // Không dùng toggleFavorite nội bộ nữa, dùng context
-
-  // Xử lý khi click checkbox
   const handleTypeChange = (e) => {
     const { name, checked } = e.target;
     setTypeFilter((prev) => ({ ...prev, [name]: checked }));
   };
 
-  // Xử lý khi chọn sort
   const handleSortChange = (e) => {
     setSortPrice(e.target.value);
   };
 
-  // Xử lý khi bấm nút lọc (nếu muốn lọc ngay khi click thì bỏ form và button)
   const handleFilterSubmit = (e) => {
     e.preventDefault();
-    // Đã lọc realtime ở trên, không cần làm gì thêm
   };
 
   if (loading) {
@@ -127,7 +123,6 @@ import { FavoritesContext } from "../../context/FavoritesContext";
           </form>
         </aside>
 
-        {/* NỘI DUNG SẢN PHẨM */}
         <main className="product-content">
           <h2 className="page-title">Danh Mục Sản Phẩm</h2>
           <div className="product-grid-category">
@@ -137,17 +132,17 @@ import { FavoritesContext } from "../../context/FavoritesContext";
                   <div className="badge-new">{item.type}</div>
                   <img src={item.image} alt={item.name} />
                   <button
-                    className={`heart-btn ${favorites.find(f => f.id === item.id) ? "active" : ""}`}
+                    className={`heart-btn ${favorites.some(f => f.id === item.id) ? "active" : ""}`}
                     onClick={() => toggleFavorite(item)}
                   >
-                    {favorites.find(f => f.id === item.id) ? "❤️" : "🤍"}
+                    {favorites.some(f => f.id === item.id) ? "❤️" : "🤍"}
                   </button>
                 </div>
 
                 <div className="product-info-box">
                   <h3 className="product-name">{item.name}</h3>
                   <p className="product-quantity">Số lượng : {item.quantity}</p>
-                  <p className="product-price">{item.price}</p>
+                  <p className="product-price">{item.price?.toLocaleString()} VND</p>
                   <button
                     className="btn-add-to-cart"
                     onClick={() => addToCart(item)}

@@ -7,6 +7,10 @@ export function CartProvider({ children }) {
     const savedCart = localStorage.getItem("cart");
     return savedCart ? JSON.parse(savedCart) : [];
   });
+  const clearCart = () => {
+    setCart([]);
+    localStorage.removeItem("cart");
+  };
   const increaseQuantity = (id) => {
     setCart((prev) =>
       prev.map((item) =>
@@ -64,6 +68,7 @@ export function CartProvider({ children }) {
         removeFromCart,
         increaseQuantity,
         decreaseQuantity,
+        clearCart,
         totalItems,
         totalPrice,
       }}

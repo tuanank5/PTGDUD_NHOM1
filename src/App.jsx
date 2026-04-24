@@ -4,7 +4,8 @@ import Home from './pages/user/Home';
 import Login from './components/Login';
 import Footer from './components/Footer';
 import ProductForm from './pages/admin/ProductForm';
-
+import CheckoutPage from './pages/user/CheckoutPage';
+import OrdersPage from './pages/user/OrdersPage';
 import ProductListPage from './pages/user/ProductList';
 // import ProductList from './components/GiaAn/ProductList';
 
@@ -30,6 +31,8 @@ function App() {
     { path: "/products", element: <ProductListPage /> },
     { path: "/about", element: <AboutUs /> },
     { path: "/favorites", element: <FavoritesPage /> }, 
+    { path: "/checkout", element: <CheckoutPage /> },
+    { path: "/orders", element: <OrdersPage /> },
     // { path: "/category", element: <ProductCategory /> }, 
     //admin
     { path: "/admin/dashboard", element: <Dashboard /> },
