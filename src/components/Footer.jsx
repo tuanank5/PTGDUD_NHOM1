@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/Footer.css";
 
 export default function Footer() {
@@ -7,22 +8,16 @@ export default function Footer() {
         <div className="footer-top">
           {/* CỘT 1: GIỚI THIỆU THƯƠNG HIỆU */}
           <div className="footer-col brand-col">
-            <h2 className="footer-logo">YOUR LOGO</h2>
+            <h2 className="footer-logo">AAAAAA</h2>
             <p className="footer-desc">
               Tự hào mang đến những bộ sưu tập túi xách cao cấp, kết hợp hoàn
               hảo giữa thiết kế thanh lịch và chất lượng vượt trội. Dành riêng
               cho phái đẹp hiện đại.
             </p>
             <div className="social-links">
-              <a href="#" className="social-icon">
-                F
-              </a>
-              <a href="#" className="social-icon">
-                I
-              </a>
-              <a href="#" className="social-icon">
-                Y
-              </a>
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="social-icon">F</a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="social-icon">I</a>
+              <a href="https://youtube.com" target="_blank" rel="noreferrer" className="social-icon">Y</a>
             </div>
           </div>
 
@@ -31,41 +26,38 @@ export default function Footer() {
             <h4 className="footer-title">LIÊN KẾT NHANH</h4>
             <ul className="footer-links">
               <li>
-                <a href="#">Trang chủ</a>
+                <Link to="/">Trang chủ</Link>
               </li>
               <li>
-                <a href="#">Tất cả sản phẩm</a>
+                <Link to="/products">Tất cả sản phẩm</Link>
               </li>
               <li>
-                <a href="#">Bộ sưu tập mới</a>
+                <Link to="/products">Bộ sưu tập mới</Link>
               </li>
               <li>
-                <a href="#">Sản phẩm khuyến mãi</a>
+                <Link to="/products?sale=true">Sản phẩm khuyến mãi</Link>
               </li>
               <li>
-                <a href="#">Bài viết - Blog</a>
+                <Link to="/about">Bài viết - Blog</Link>
               </li>
             </ul>
           </div>
 
           {/* CỘT 3: CHÍNH SÁCH KHÁCH HÀNG */}
           <div className="footer-col">
-            <h4 className="footer-title">CHÍNH SÁCH</h4>
+            <h4 className="footer-title">THÀNH VIÊN NHÓM 1</h4>
             <ul className="footer-links">
               <li>
-                <a href="#">Chính sách giao hàng</a>
+                <a href="#">Hồ Tấn An</a>
               </li>
               <li>
-                <a href="#">Chính sách đổi trả</a>
+                <a href="#">Nguyễn Gia An</a>
               </li>
               <li>
-                <a href="#">Chính sách bảo mật</a>
+                <a href="#">Nguyễn Thị Vân Anh</a>
               </li>
               <li>
-                <a href="#">Hướng dẫn mua hàng</a>
-              </li>
-              <li>
-                <a href="#">Câu hỏi thường gặp</a>
+                <a href="#">Nguyễn Tuấn Anh</a>
               </li>
             </ul>
           </div>

@@ -30,10 +30,7 @@ export default function Header() {
             <span className="brand-sub">LUXURY BAGS</span>
           </div>
 
-          <div className="search-luxury">
-            <input type="text" placeholder="Tìm kiếm sản phẩm..." />
-            <button className="btn-search-lux">🔍</button>
-          </div>
+         
 
           <div className="actions-luxury">
             <div
