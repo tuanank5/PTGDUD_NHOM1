@@ -1,21 +1,21 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/user/Home';
 import Login from './components/Login';
 import Footer from './components/Footer';
 import ProductForm from './pages/admin/ProductForm';
 import CheckoutPage from './pages/user/CheckoutPage';
 import OrdersPage from './pages/user/OrdersPage';
-import ProductListPage from './pages/user/ProductList';
-// import ProductList from './components/GiaAn/ProductList';
-
+import ProductList from './pages/user/ProductList';
+import ProtectedRoute from './context/ProtectedRoute';
 import FavoritesPage from "./pages/user/FavoritesPage";
 import AboutUs from './pages/user/AboutUs';
 import { AppProviders } from './context/AppProvider';
 import { useEffect, useState } from 'react';
 import { getProducts } from './api/productsAPI';
 import Dashboard from './pages/admin/Dashboard';
-import ProductCategory from './components/ProductList/ProductCategory';
+import NotFound from './components/NotFound';
+import UserForm from './pages/admin/UserForm';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -24,20 +24,62 @@ function App() {
     getProducts().then(setProducts);
   }, []);
 
-  const routes = [
-    { path: "/", element: <Home /> },
-    { path: "/login", element: <Login /> },
-    // { path: "/products", element: <ProductList products={products} /> }, 
-    { path: "/products", element: <ProductListPage /> },
-    { path: "/about", element: <AboutUs /> },
-    { path: "/favorites", element: <FavoritesPage /> }, 
-    { path: "/checkout", element: <CheckoutPage /> },
-    { path: "/orders", element: <OrdersPage /> },
-    // { path: "/category", element: <ProductCategory /> }, 
-    //admin
-    { path: "/admin/dashboard", element: <Dashboard /> },
-    { path: "/admin/productForm", element: <ProductForm /> },
-  ];
+    const routes = [
+      //guest: Chưa đăng nhập
+      { path: "/", element: (
+        <ProtectedRoute allowRoles={["guest"]}>
+          <Home />
+        </ProtectedRoute>
+      ) },
+      { path: "/login", element: (
+        <ProtectedRoute allowRoles={["guest"]}>
+          <Login />
+        </ProtectedRoute>
+      ) },
+      { path: "/products", element: (
+        <ProtectedRoute allowRoles={["guest"]}>
+          <ProductList />
+        </ProtectedRoute>
+      ) },
+      { path: "/about", element: (
+        <ProtectedRoute allowRoles={["guest"]}>
+          <AboutUs />
+        </ProtectedRoute>
+      ) },
+      { path: "/favorites", element: (
+        <ProtectedRoute allowRoles={["guest"]}>
+          <FavoritesPage />
+        </ProtectedRoute>
+      ) },
+      { path: "/orders", element: (
+        <ProtectedRoute allowRoles={["guest"]}>
+          <OrdersPage />
+        </ProtectedRoute>
+      ) },
+      //user: Đăng nhập với user.role == user
+      { path: "/checkout", element: (
+        <ProtectedRoute allowRoles={["user"]}>
+          <CheckoutPage />
+        </ProtectedRoute>
+      ) },
+      //admin: Đăng nhập với user.role == admin
+      { path: "/admin/dashboard", element: (
+        <ProtectedRoute allowRoles={["admin"]}>
+          <Dashboard />
+        </ProtectedRoute>
+      ) },
+      { path: "/admin/products", element: (
+        <ProtectedRoute allowRoles={["admin"]}>
+          <ProductForm />
+        </ProtectedRoute>
+      ) },
+      { path: "/admin/users", element: (
+        <ProtectedRoute allowRoles={["admin"]}>
+          <UserForm />
+        </ProtectedRoute>
+      ) },
+      { path: "*", element: <NotFound /> },
+    ];
 
   return (
     <AppProviders>

@@ -83,13 +83,6 @@ export default function ProductForm() {
     <br />
     <br />
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
     <div style={{ padding: 20 }}>
       <input 
         type="text" 

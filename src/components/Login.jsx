@@ -1,7 +1,7 @@
 //
 
 import { use, useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import "../styles/Login.css"; 
 
 import loginBg from "/images/login.jpg"; 
@@ -54,17 +54,9 @@ function Login() {
     }
 
     if (user?.role === "admin") {
-        return (
-            <>
-            {navigate("/admin/dashboard")}
-            </>
-        )
+        return <Navigate to="/admin/dashboard" replace />;
     } else if (user?.role === "user") {
-        return (
-            <>
-            {navigate("/")}
-            </>
-        )
+        return <Navigate to="/" replace />;
     }
 
     return (

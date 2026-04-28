@@ -24,7 +24,23 @@ export default function Header() {
         <div className="actions-luxury">
           <div 
             className="action-item" 
-            onClick={() => navigate('/admin/productForm')} 
+            onClick={() => navigate('/admin/users')} 
+            style={{ cursor: "pointer" }}
+          >
+            <div className="cart-lux-wrapper">
+              <span className="lux-icon">👤</span>
+              {favorites.length > 0 && (
+                <span className="cart-lux-count" style={{ backgroundColor: '#ff4d4d' }}>
+                  {favorites.length}
+                </span>
+              )}
+            </div>
+            <span className="lux-label">Quản lý tài khoản</span>
+          </div>
+
+          <div 
+            className="action-item" 
+            onClick={() => navigate('/admin/products')} 
             style={{ cursor: "pointer" }}
           >
             <div className="cart-lux-wrapper">

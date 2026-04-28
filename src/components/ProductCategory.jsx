@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-import { getProducts } from "../../api/productsAPI";
-import "../../styles/ProductList/ProductCategory.css";
+import { getProducts } from "../api/productsAPI";
+import "../styles/ProductCategory.css";
 import { useLocation } from "react-router-dom";
-import { useCart } from "../../context/CartContext";
-import { FavoritesContext } from "../../context/FavoritesContext";
+import { useCart } from "../context/CartContext";
+import { FavoritesContext } from "../context/FavoritesContext";
 
 // PHẢI CÓ DÒNG NÀY ĐỂ ĐỊNH NGHĨA COMPONENT
 export default function ProductCategory() {
