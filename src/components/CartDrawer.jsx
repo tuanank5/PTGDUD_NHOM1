@@ -1,9 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 import "../styles/CartDrawer.css";
 
 export default function CartDrawer({ isOpen, onClose }) {
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
   const {
     cart,
     removeFromCart,
@@ -13,16 +16,24 @@ export default function CartDrawer({ isOpen, onClose }) {
   } = useCart();
 
   const handleGoToCheckout = () => {
+    if (!user) {
+      const confirmed = window.confirm(
+        "Bạn cần đăng nhập để tiến hành thanh toán!\nBấm OK để đến trang đăng nhập.",
+      );
+      if (confirmed) {
+        onClose();
+        navigate("/login");
+      }
+      return;
+    }
     onClose();
     navigate("/checkout");
   };
-
   return (
     <>
       {isOpen && <div className="cd-overlay" onClick={onClose} />}
 
       <div className={`cd-drawer ${isOpen ? "cd-open" : ""}`}>
-        {/* Header */}
         <div className="cd-header">
           <span className="cd-title">GIỎ HÀNG CỦA BẠN</span>
           <button className="cd-close" onClick={onClose}>
@@ -30,7 +41,6 @@ export default function CartDrawer({ isOpen, onClose }) {
           </button>
         </div>
 
-        {/* Body */}
         <div className="cd-body">
           {cart.length === 0 ? (
             <div className="cd-empty">
@@ -47,7 +57,7 @@ export default function CartDrawer({ isOpen, onClose }) {
                     <button onClick={() => decreaseQuantity(item.id)}>-</button>
                     <span>{item.quantity}</span>
                     <button onClick={() => increaseQuantity(item.id)}>+</button>
-                  </div>{" "}
+                  </div>
                   <p className="cd-item-price">
                     {typeof item.price === "number"
                       ? item.price.toLocaleString("vi-VN") + "đ"
@@ -65,7 +75,6 @@ export default function CartDrawer({ isOpen, onClose }) {
           )}
         </div>
 
-        {/* Footer */}
         {cart.length > 0 && (
           <div className="cd-footer">
             <div className="cd-total">

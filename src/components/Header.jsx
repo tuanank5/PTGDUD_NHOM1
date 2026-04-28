@@ -70,6 +70,17 @@ export default function Header() {
               <span className="lux-label">Giỏ hàng</span>
             </div>
 
+            {user && (
+              <div
+                className="action-item"
+                onClick={() => navigate("/orders")}
+                style={{ cursor: "pointer" }}
+              >
+                <span className="lux-icon">📦</span>
+                <span className="lux-label">Đơn hàng</span>
+              </div>
+            )}
+
             {!user ? (
               <div
                 className="action-item"

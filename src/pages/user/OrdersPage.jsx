@@ -1,31 +1,42 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Header from "../../components/Header";
 import "../../styles/OrdersPage.css";
+import { getOrdersByUser, updateOrder } from "../../api/orderAPI";
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export default function OrdersPage() {
   const [orders, setOrders] = useState([]);
   const [activeTab, setActiveTab] = useState("Tất cả");
+  const [loading, setLoading] = useState(true);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  const tabs = [
-    "Tất cả",
-    "Chờ thanh toán",
-    "Đang giao",
-    "Hoàn thành",
-    "Đã hủy",
-  ];
+  const tabs = ["Tất cả", "Đã đặt", "Đã hủy"];
 
   useEffect(() => {
-    // Lấy dữ liệu đơn hàng đã lưu từ localStorage
-    const savedOrders = JSON.parse(localStorage.getItem("userOrders") || "[]");
-    setOrders(savedOrders);
-  }, []);
+    if (!user) return;
+    getOrdersByUser(user.id)
+      .then((data) => {
+        const sorted = data.sort(
+          (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
+        );
+        setOrders(sorted);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [user]);
 
-  // Logic lọc đơn hàng theo Tab
+  const handleCancelOrder = async (orderId) => {
+    await updateOrder(orderId, { status: "cancelled" });
+    setOrders((prev) =>
+      prev.map((o) => (o.id === orderId ? { ...o, status: "cancelled" } : o)),
+    );
+  };
+
   const filteredOrders = orders.filter((order) => {
     if (activeTab === "Tất cả") return true;
-    if (activeTab === "Chờ thanh toán") return order.status === "processing";
-    if (activeTab === "Đang giao") return order.status === "shipping";
-    if (activeTab === "Hoàn thành") return order.status === "completed";
+    if (activeTab === "Đã đặt") return order.status !== "cancelled";
     if (activeTab === "Đã hủy") return order.status === "cancelled";
     return true;
   });
@@ -35,6 +46,9 @@ export default function OrdersPage() {
       <Header />
       <div className="orders-content">
         <div className="orders-tabs">
+          <div className="tab-item" onClick={() => navigate("/")}>
+            🏠 Trang chủ
+          </div>
           {tabs.map((tab) => (
             <div
               key={tab}
@@ -47,13 +61,26 @@ export default function OrdersPage() {
         </div>
 
         <div className="orders-list">
-          {filteredOrders.length > 0 ? (
+          {loading ? (
+            <div className="no-order">
+              <p>Đang tải đơn hàng...</p>
+            </div>
+          ) : filteredOrders.length > 0 ? (
             filteredOrders.map((order) => (
               <div className="order-card" key={order.id}>
                 <div className="order-header">
-                  <span className="order-id">Mã đơn: {order.id}</span>
-                  <span className="order-status-text">
-                    {order.status.toUpperCase()}
+                  <span className="order-id">Mã đơn: #{order.id}</span>
+                  <span
+                    className="order-status-text"
+                    style={{
+                      color:
+                        order.status === "cancelled" ? "#e53935" : "#2e7d32",
+                    }}
+                  >
+                    {order.status === "processing" && "Đã đặt hàng"}
+                    {order.status === "shipping" && "Đang giao"}
+                    {order.status === "completed" && "Hoàn thành"}
+                    {order.status === "cancelled" && "Đã hủy"}
                   </span>
                 </div>
 
@@ -99,11 +126,13 @@ export default function OrdersPage() {
                   </div>
                   <div className="order-actions">
                     <button className="btn-track">Liên hệ người bán</button>
-                    {order.status === "shipping" && (
-                      <button className="btn-main">Đã nhận hàng</button>
-                    )}
                     {order.status === "processing" && (
-                      <button className="btn-outline-red">Hủy đơn hàng</button>
+                      <button
+                        className="btn-outline-red"
+                        onClick={() => handleCancelOrder(order.id)}
+                      >
+                        Hủy đơn hàng
+                      </button>
                     )}
                   </div>
                 </div>

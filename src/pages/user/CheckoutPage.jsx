@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Header from "../../components/Header";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
+import { AuthContext } from "../../context/AuthContext";
+import { createOrder } from "../../api/orderAPI";
 import "../../styles/CheckoutPage.css";
 
 export default function CheckoutPage() {
   const { cart, totalPrice, clearCart } = useCart();
+  const { user } = useContext(AuthContext);
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -25,6 +29,8 @@ export default function CheckoutPage() {
   const [promoCode, setPromoCode] = useState("");
   const [discount, setDiscount] = useState(0);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("https://provinces.open-api.vn/api/?depth=1")
@@ -76,7 +82,7 @@ export default function CheckoutPage() {
     }
   };
 
-  const handleFinalCheckout = () => {
+  const handleFinalCheckout = async () => {
     if (
       !formData.fullName.trim() ||
       !formData.phone.trim() ||
@@ -85,35 +91,39 @@ export default function CheckoutPage() {
     ) {
       return alert("Bạn vui lòng điền đầy đủ các thông tin bắt buộc (*)");
     }
-    const orderId = "DH" + Date.now();
 
     const newOrder = {
-      id: "DH" + Math.floor(Math.random() * 1000000),
+      userId: user.id, 
       status: "processing",
       total: totalPrice + shippingFee - discount,
       items: [...cart],
-      date: new Date().toLocaleString(),
+      shippingInfo: {
+        fullName: formData.fullName,
+        phone: formData.phone,
+        address: `${formData.addressDetail}, ${formData.ward}, ${formData.district}, ${formData.province}`,
+        note: formData.note,
+      },
+      shippingMethod,
+      paymentMethod,
+      createdAt: new Date().toISOString(), // ← dùng để sort
       tracking: [
         {
-          time: new Date().toLocaleString(),
+          time: new Date().toLocaleString("vi-VN"),
           desc: "Đơn hàng đã được đặt thành công",
         },
       ],
     };
 
-    const existingOrders = JSON.parse(
-      localStorage.getItem("userOrders") || "[]",
-    );
-    localStorage.setItem(
-      "userOrders",
-      JSON.stringify([newOrder, ...existingOrders]),
-    );
-
-    clearCart();
-
-    setShowSuccessModal(true);
+    try {
+      await createOrder(newOrder); // ← lưu vào db.json
+      clearCart();
+      setShowSuccessModal(true);
+    } catch (error) {
+      alert("Có lỗi xảy ra, vui lòng thử lại!");
+    }
   };
 
+  // ... phần return giữ nguyên hoàn toàn
   return (
     <div className="checkout-page-container">
       <Header />
@@ -121,6 +131,9 @@ export default function CheckoutPage() {
         <div className="checkout-layout-grid">
           <div className="info-column">
             <div className="card-box">
+              <div className="back-button" onClick={() => navigate(-1)}>
+                ← Quay lại
+              </div>
               <h2 className="section-title">1. THÔNG TIN GIAO HÀNG</h2>
               <div className="input-row-flex">
                 <div className="input-item">
@@ -380,7 +393,7 @@ export default function CheckoutPage() {
           <div className="success-modal">
             <div className="success-icon-wrap">
               <div className="success-circle">
-                <span className="check-mark">L</span>
+                <span className="check-mark">✓</span>
               </div>
             </div>
             <h2 className="modal-title">Cảm ơn bạn đã đặt hàng!</h2>
