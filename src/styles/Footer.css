@@ -1,8 +1,7 @@
-
 .footer {
-  background-color: #5C4033; 
-  color: #fdf9f3; 
-  font-family: 'Arial', sans-serif;
+  background-color: #5c4033;
+  color: #fdf9f3;
+  font-family: "Arial", sans-serif;
   padding-top: 80px;
 }
 
@@ -17,7 +16,7 @@
   grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
   gap: 40px;
   padding-bottom: 60px;
-  border-bottom: 1px solid rgba(253, 249, 243, 0.15); 
+  border-bottom: 1px solid rgba(253, 249, 243, 0.15);
 }
 
 .footer-logo {
@@ -30,7 +29,7 @@
 .footer-desc {
   font-size: 14px;
   line-height: 1.6;
-  color: #d8cbb8; 
+  color: #d8cbb8;
   margin-bottom: 25px;
   padding-right: 20px;
 }
@@ -43,17 +42,20 @@
   text-transform: uppercase;
 }
 
-.footer-links, .footer-contact {
+.footer-links,
+.footer-contact {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-links li, .footer-contact li {
+.footer-links li,
+.footer-contact li {
   margin-bottom: 15px;
 }
 
-.footer-links a, .footer-contact li {
+.footer-links a,
+.footer-contact li {
   color: #d8cbb8;
   text-decoration: none;
   font-size: 14px;
@@ -130,7 +132,7 @@
 
 .newsletter-form button:hover {
   background: #fff;
-  color: #5C4033;
+  color: #5c4033;
 }
 
 .footer-bottom {
@@ -147,8 +149,8 @@
 }
 
 .payment-icons {
-  width: 150px; 
-  height: auto;  
+  width: 150px;
+  height: auto;
   object-fit: contain;
   opacity: 0.8;
 }
@@ -160,13 +162,13 @@
 
 @media (max-width: 992px) {
   .footer-top {
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 576px) {
   .footer-top {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
   .footer-bottom {
     flex-direction: column;

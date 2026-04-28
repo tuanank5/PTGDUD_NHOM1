@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { getProducts, addProduct, updateProduct, deleteProduct} from "../../api/productsAPI";
+import {
+  addProduct,
+  deleteProduct,
+  getProducts,
+  updateProduct,
+} from "../../api/productsAPI";
 import Header from "./Header";
 
 export default function ProductForm() {
@@ -16,9 +21,10 @@ export default function ProductForm() {
   useEffect(() => {
     getProducts().then(setProducts);
   }, []);
-  
+
   const handleSubmit = async () => {
-    if (!name || !price || !quantity || !category || !image || !type) return alert("Vui lòng nhập đầy đủ thông tin sản phẩm!");
+    if (!name || !price || !quantity || !category || !image || !type)
+      return alert("Vui lòng nhập đầy đủ thông tin sản phẩm!");
 
     if (isNaN(price)) {
       return alert("Giá phải là số!");
@@ -40,13 +46,11 @@ export default function ProductForm() {
     if (id) {
       const updated = await updateProduct(id, newProduct);
 
-      setProducts(prev =>
-        prev.map(p => (p.id === id ? updated : p))
-      );
+      setProducts((prev) => prev.map((p) => (p.id === id ? updated : p)));
     } else {
       const added = await addProduct(newProduct);
 
-      setProducts(prev => [...prev, added]);
+      setProducts((prev) => [...prev, added]);
     }
 
     setName("");
@@ -57,7 +61,7 @@ export default function ProductForm() {
     setType("");
     setId(null);
 
-    alert("Thêm thành công")
+    alert("Thêm thành công");
   };
 
   const handleUpdate = (p) => {
@@ -74,120 +78,115 @@ export default function ProductForm() {
     if (!confirmDelete) return;
 
     await deleteProduct(id);
-    setProducts(prev => prev.filter(p => p.id !== id));
+    setProducts((prev) => prev.filter((p) => p.id !== id));
   };
 
   return (
     <>
-    <Header />
-    <br />
-    <br />
-    <br />
-    <div style={{ padding: 20 }}>
-      <input 
-        type="text" 
-        placeholder="Tên" 
-        value={name}
-        onChange={(e) => setName(e.target.value)} 
-      />
+      <Header />
       <br />
-      <input 
-        type="text" 
-        placeholder="Giá" 
-        value={price}
-        onChange={(e) => setPrice(e.target.value)} 
-      />
       <br />
-      <input 
-        type="text" 
-        placeholder="Số lượng" 
-        value={quantity}
-        onChange={(e) => setQuantity(e.target.value)} 
-      />
       <br />
-      <select
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
-      >
-        <option value="">-- Chọn loại --</option>
-        <option value="dulich">Du lịch</option>
-        <option value="nam">Nam</option>
-        <option value="tote">Tote</option>
-        <option value="nu">Nữ</option>
-      </select>
-      <br />
-      <input 
-        type="file" 
-        accept="image/*"
-        onChange={(e) => {
-          const file = e.target.files[0];
-          if (!file) return;
+      <div style={{ padding: 20 }}>
+        <input
+          type="text"
+          placeholder="Tên"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="Giá"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="Số lượng"
+          value={quantity}
+          onChange={(e) => setQuantity(e.target.value)}
+        />
+        <br />
+        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option value="">-- Chọn loại --</option>
+          <option value="dulich">Du lịch</option>
+          <option value="nam">Nam</option>
+          <option value="tote">Tote</option>
+          <option value="nu">Nữ</option>
+        </select>
+        <br />
+        <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => {
+            const file = e.target.files[0];
+            if (!file) return;
 
-          const reader = new FileReader();
+            const reader = new FileReader();
 
-          reader.onloadend = () => {
-            setImage(reader.result); 
-          };
+            reader.onloadend = () => {
+              setImage(reader.result);
+            };
 
-          reader.readAsDataURL(file);
-        }}
-      />
-      <br />
-      <select
-        value={type}
-        onChange={(e) => setType(e.target.value)}
-      >
-        <option value="">-- Chọn kiểu --</option>
-        <option value="new">New</option>
-        <option value="normal">Normal</option>
-        <option value="best-seller">Best seller</option>
-      </select>
-      
-      <br />
-      <br />
-      <button onClick={handleSubmit}>{id ? "Cập nhật" : "Thêm"}</button>
+            reader.readAsDataURL(file);
+          }}
+        />
+        <br />
+        <select value={type} onChange={(e) => setType(e.target.value)}>
+          <option value="">-- Chọn kiểu --</option>
+          <option value="new">New</option>
+          <option value="normal">Normal</option>
+          <option value="best-seller">Best seller</option>
+        </select>
 
-      <hr />
-      <table border="1" cellPadding="10" style={{ marginTop: 20 }}>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Tên</th>
-            <th>Giá</th>
-            <th>Số lượng</th>
-            <th>Loại</th>
-            <th>Ảnh</th>
-            <th>Kiểu</th>
-            <th></th>
-          </tr>
-        </thead>
+        <br />
+        <br />
+        <button onClick={handleSubmit}>{id ? "Cập nhật" : "Thêm"}</button>
 
-        <tbody>
-          {products.map((p) => (
-            <tr key={p.id}>
-              <td>{p.id}</td>
-              <td>{p.name}</td>
-              <td>{p.price}</td>
-              <td>{p.quantity}</td>
-              <td>{p.category}</td>
-              <td>
-                <img src={p.image} alt="" width="60" />
-              </td>
-              <td>{p.type}</td>
-
-              <td>
-                <button onClick={() => handleUpdate(p)}>
-                  Cập nhật
-                </button>
-                <button style={{marginLeft: "10px"}} onClick={() => handleDelete(p.id)}>
-                  Xóa
-                </button>
-              </td>
+        <hr />
+        <table border="1" cellPadding="10" style={{ marginTop: 20 }}>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Tên</th>
+              <th>Giá</th>
+              <th>Số lượng</th>
+              <th>Loại</th>
+              <th>Ảnh</th>
+              <th>Kiểu</th>
+              <th></th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+
+          <tbody>
+            {products.map((p) => (
+              <tr key={p.id}>
+                <td>{p.id}</td>
+                <td>{p.name}</td>
+                <td>{p.price}</td>
+                <td>{p.quantity}</td>
+                <td>{p.category}</td>
+                <td>
+                  <img src={p.image} alt="" width="60" />
+                </td>
+                <td>{p.type}</td>
+
+                <td>
+                  <button onClick={() => handleUpdate(p)}>Cập nhật</button>
+                  <button
+                    style={{ marginLeft: "10px" }}
+                    onClick={() => handleDelete(p.id)}
+                  >
+                    Xóa
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }

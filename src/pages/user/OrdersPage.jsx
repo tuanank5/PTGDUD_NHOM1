@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import "../../styles/OrdersPage.css";
 
@@ -6,7 +6,13 @@ export default function OrdersPage() {
   const [orders, setOrders] = useState([]);
   const [activeTab, setActiveTab] = useState("Tất cả");
 
-  const tabs = ["Tất cả", "Chờ thanh toán", "Đang giao", "Hoàn thành", "Đã hủy"];
+  const tabs = [
+    "Tất cả",
+    "Chờ thanh toán",
+    "Đang giao",
+    "Hoàn thành",
+    "Đã hủy",
+  ];
 
   useEffect(() => {
     // Lấy dữ liệu đơn hàng đã lưu từ localStorage
@@ -15,7 +21,7 @@ export default function OrdersPage() {
   }, []);
 
   // Logic lọc đơn hàng theo Tab
-  const filteredOrders = orders.filter(order => {
+  const filteredOrders = orders.filter((order) => {
     if (activeTab === "Tất cả") return true;
     if (activeTab === "Chờ thanh toán") return order.status === "processing";
     if (activeTab === "Đang giao") return order.status === "shipping";
@@ -30,8 +36,8 @@ export default function OrdersPage() {
       <div className="orders-content">
         <div className="orders-tabs">
           {tabs.map((tab) => (
-            <div 
-              key={tab} 
+            <div
+              key={tab}
               className={`tab-item ${activeTab === tab ? "active" : ""}`}
               onClick={() => setActiveTab(tab)}
             >
@@ -46,7 +52,9 @@ export default function OrdersPage() {
               <div className="order-card" key={order.id}>
                 <div className="order-header">
                   <span className="order-id">Mã đơn: {order.id}</span>
-                  <span className="order-status-text">{order.status.toUpperCase()}</span>
+                  <span className="order-status-text">
+                    {order.status.toUpperCase()}
+                  </span>
                 </div>
 
                 {order.items.map((item, i) => (
@@ -56,7 +64,9 @@ export default function OrdersPage() {
                       <p className="item-name">{item.name}</p>
                       <p className="item-qty">Số lượng: x{item.quantity}</p>
                     </div>
-                    <span className="item-price">{(item.price * item.quantity).toLocaleString()}đ</span>
+                    <span className="item-price">
+                      {(item.price * item.quantity).toLocaleString()}đ
+                    </span>
                   </div>
                 ))}
 
@@ -65,8 +75,12 @@ export default function OrdersPage() {
                   {order.tracking.map((step, index) => (
                     <div className="step-row" key={index}>
                       <div className="step-dot-line">
-                        <div className={`dot ${index === 0 ? "active" : ""}`}></div>
-                        {index !== order.tracking.length - 1 && <div className="line"></div>}
+                        <div
+                          className={`dot ${index === 0 ? "active" : ""}`}
+                        ></div>
+                        {index !== order.tracking.length - 1 && (
+                          <div className="line"></div>
+                        )}
                       </div>
                       <div className="step-content">
                         <p className="step-desc">{step.desc}</p>
@@ -78,12 +92,19 @@ export default function OrdersPage() {
 
                 <div className="order-footer">
                   <div className="total-payment">
-                    Thành tiền: <span className="total-val">{order.total.toLocaleString()}đ</span>
+                    Thành tiền:{" "}
+                    <span className="total-val">
+                      {order.total.toLocaleString()}đ
+                    </span>
                   </div>
                   <div className="order-actions">
                     <button className="btn-track">Liên hệ người bán</button>
-                    {order.status === "shipping" && <button className="btn-main">Đã nhận hàng</button>}
-                    {order.status === "processing" && <button className="btn-outline-red">Hủy đơn hàng</button>}
+                    {order.status === "shipping" && (
+                      <button className="btn-main">Đã nhận hàng</button>
+                    )}
+                    {order.status === "processing" && (
+                      <button className="btn-outline-red">Hủy đơn hàng</button>
+                    )}
                   </div>
                 </div>
               </div>

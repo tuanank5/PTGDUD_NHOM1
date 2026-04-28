@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getUsers, addUser, updateUser, deleteUser } from "../../api/usersAPI";
+import { addUser, deleteUser, getUsers, updateUser } from "../../api/usersAPI";
 
 import Header from "./Header";
 
@@ -23,19 +23,17 @@ export default function UserForm() {
     const newUser = {
       username,
       password,
-      role
+      role,
     };
 
     if (id) {
       const updated = await updateUser(id, newUser);
 
-      setUsers(prev =>
-        prev.map(u => (u.id === id ? updated : u))
-      );
+      setUsers((prev) => prev.map((u) => (u.id === id ? updated : u)));
     } else {
       const added = await addUser(newUser);
 
-      setUsers(prev => [...prev, added]);
+      setUsers((prev) => [...prev, added]);
     }
 
     setUsername("");
@@ -58,7 +56,7 @@ export default function UserForm() {
     if (!confirmDelete) return;
 
     await deleteUser(id);
-    setUsers(prev => prev.filter(u => u.id !== id));
+    setUsers((prev) => prev.filter((u) => u.id !== id));
   };
 
   return (
@@ -90,10 +88,9 @@ export default function UserForm() {
           <option value="user">User</option>
         </select>
 
-        <br /><br />
-        <button onClick={handleSubmit}>
-          {id ? "Cập nhật" : "Thêm"}
-        </button>
+        <br />
+        <br />
+        <button onClick={handleSubmit}>{id ? "Cập nhật" : "Thêm"}</button>
 
         <hr />
 
@@ -117,9 +114,7 @@ export default function UserForm() {
                 <td>{u.role}</td>
 
                 <td>
-                  <button onClick={() => handleUpdate(u)}>
-                    Cập nhật
-                  </button>
+                  <button onClick={() => handleUpdate(u)}>Cập nhật</button>
                   <button
                     style={{ marginLeft: "10px" }}
                     onClick={() => handleDelete(u.id)}

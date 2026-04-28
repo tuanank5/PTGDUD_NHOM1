@@ -1,6 +1,5 @@
-import React from "react";
-import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 import "../styles/CartDrawer.css";
 
 export default function CartDrawer({ isOpen, onClose }) {
@@ -14,8 +13,8 @@ export default function CartDrawer({ isOpen, onClose }) {
   } = useCart();
 
   const handleGoToCheckout = () => {
-    onClose(); 
-    navigate("/checkout"); 
+    onClose();
+    navigate("/checkout");
   };
 
   return (
@@ -73,7 +72,7 @@ export default function CartDrawer({ isOpen, onClose }) {
               <span>TỔNG TIỀN:</span>
               <strong>{totalPrice.toLocaleString("vi-VN")}đ</strong>
             </div>
-           <button className="cd-checkout" onClick={handleGoToCheckout}>
+            <button className="cd-checkout" onClick={handleGoToCheckout}>
               THANH TOÁN
             </button>
           </div>
@@ -82,4 +81,3 @@ export default function CartDrawer({ isOpen, onClose }) {
     </>
   );
 }
-

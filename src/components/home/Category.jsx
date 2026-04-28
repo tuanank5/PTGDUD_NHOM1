@@ -1,4 +1,3 @@
-//sự kiện chuyển sang trang /products lọc tương ứng
 import { Link } from "react-router-dom";
 import "../../styles/home/Category.css";
 

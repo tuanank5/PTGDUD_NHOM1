@@ -1,0 +1,14 @@
+.notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notfound h2 {
+  color: red;
+}
+
+.notfound a {
+  text-decoration: none;
+}

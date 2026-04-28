@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
-import { getProducts } from "../api/productsAPI";
-import "../styles/ProductCategory.css";
+import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { getProducts } from "../api/productsAPI";
 import { useCart } from "../context/CartContext";
 import { FavoritesContext } from "../context/FavoritesContext";
+import "../styles/ProductCategory.css";
 
 // PHẢI CÓ DÒNG NÀY ĐỂ ĐỊNH NGHĨA COMPONENT
 export default function ProductCategory() {
@@ -16,8 +16,8 @@ export default function ProductCategory() {
   // State cho filter
   const [typeFilter, setTypeFilter] = useState({
     "best-seller": false,
-    "new": false,
-    "normal": false,
+    new: false,
+    normal: false,
   });
   const [sortPrice, setSortPrice] = useState("");
 
@@ -47,7 +47,9 @@ export default function ProductCategory() {
   // Lọc theo type
   const checkedTypes = Object.keys(typeFilter).filter((key) => typeFilter[key]);
   if (checkedTypes.length > 0) {
-    filteredProducts = filteredProducts.filter((item) => checkedTypes.includes(item.type));
+    filteredProducts = filteredProducts.filter((item) =>
+      checkedTypes.includes(item.type),
+    );
   }
 
   // Sắp xếp theo giá
@@ -119,7 +121,9 @@ export default function ProductCategory() {
                 <option value="desc">Giá giảm dần</option>
               </select>
             </div>
-            <button className="btn-apply-filter" type="submit">Lọc</button>
+            <button className="btn-apply-filter" type="submit">
+              Lọc
+            </button>
           </form>
         </aside>
 
@@ -132,17 +136,19 @@ export default function ProductCategory() {
                   <div className="badge-new">{item.type}</div>
                   <img src={item.image} alt={item.name} />
                   <button
-                    className={`heart-btn ${favorites.some(f => f.id === item.id) ? "active" : ""}`}
+                    className={`heart-btn ${favorites.some((f) => f.id === item.id) ? "active" : ""}`}
                     onClick={() => toggleFavorite(item)}
                   >
-                    {favorites.some(f => f.id === item.id) ? "❤️" : "🤍"}
+                    {favorites.some((f) => f.id === item.id) ? "❤️" : "🤍"}
                   </button>
                 </div>
 
                 <div className="product-info-box">
                   <h3 className="product-name">{item.name}</h3>
                   <p className="product-quantity">Số lượng : {item.quantity}</p>
-                  <p className="product-price">{item.price?.toLocaleString()} VND</p>
+                  <p className="product-price">
+                    {item.price?.toLocaleString()} VND
+                  </p>
                   <button
                     className="btn-add-to-cart"
                     onClick={() => addToCart(item)}

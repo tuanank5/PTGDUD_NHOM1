@@ -9,9 +9,9 @@ export const addProduct = async (product) => {
   const res = await fetch(API_URL, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(product)
+    body: JSON.stringify(product),
   });
 
   return res.json();
@@ -21,9 +21,9 @@ export const updateProduct = async (id, product) => {
   const res = await fetch(`${API_URL}/${id}`, {
     method: "PATCH",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(product)
+    body: JSON.stringify(product),
   });
 
   return res.json();
@@ -31,6 +31,6 @@ export const updateProduct = async (id, product) => {
 
 export const deleteProduct = async (id) => {
   await fetch(`${API_URL}/${id}`, {
-    method: "DELETE"
+    method: "DELETE",
   });
 };

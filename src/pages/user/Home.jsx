@@ -1,13 +1,11 @@
-//
-
 import Header from "../../components/Header";
 import Menu from "../../components/Menu";
-import Slider from "../../components/home/Slider";
-import ProductSection from "../../components/home/ProductSection";
 import Banner from "../../components/home/Banner";
 import Category from "../../components/home/Category";
-import WhyUs from "../../components/home/WhyUs";
+import ProductSection from "../../components/home/ProductSection";
 import Review from "../../components/home/Review";
+import Slider from "../../components/home/Slider";
+import WhyUs from "../../components/home/WhyUs";
 export default function Home() {
   return (
     <div>

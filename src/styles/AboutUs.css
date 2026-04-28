@@ -1,139 +1,165 @@
 .about-page-wrapper {
-    background-color: #fff;
-    overflow-x: hidden;
+  background-color: #fff;
+  overflow-x: hidden;
 }
 
 .about-content-area {
-    padding-top: 170px; 
+  padding-top: 170px;
 }
 
 .about-hero-banner {
-    background-color: #fdfaf7;
-    padding: 60px 5%;
+  background-color: #fdfaf7;
+  padding: 60px 5%;
 }
 
 .hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
 }
 
-.hero-info { flex: 1; }
+.hero-info {
+  flex: 1;
+}
 .hero-info h1 {
-    font-size: 3.2rem;
-    color: #5C4033;
-    font-family: 'Playfair Display', serif;
-    line-height: 1.1;
-    margin-bottom: 25px;
+  font-size: 3.2rem;
+  color: #5c4033;
+  font-family: "Playfair Display", serif;
+  line-height: 1.1;
+  margin-bottom: 25px;
 }
 
 .hero-desc {
-    font-size: 1.1rem;
-    color: #777;
-    line-height: 1.6;
+  font-size: 1.1rem;
+  color: #777;
+  line-height: 1.6;
 }
 
-.hero-visual { flex: 1.2; }
+.hero-visual {
+  flex: 1.2;
+}
 .hero-visual img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 4px;
-    box-shadow: 15px 15px 0px #c5a572; 
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 15px 15px 0px #c5a572;
 }
 
 .about-mission {
-    padding: 100px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 100px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .mission-container {
-    display: flex;
-    gap: 80px;
-    align-items: center;
+  display: flex;
+  gap: 80px;
+  align-items: center;
 }
 
 .mission-images-grid {
-    flex: 1;
-    position: relative;
-    height: 500px;
+  flex: 1;
+  position: relative;
+  height: 500px;
 }
 
 .image-stack-base img {
-    width: 75%;
-    height: 400px;
-    object-fit: cover;
-    border: 1px solid #eee;
-    padding: 10px;
-    background: #fff;
+  width: 75%;
+  height: 400px;
+  object-fit: cover;
+  border: 1px solid #eee;
+  padding: 10px;
+  background: #fff;
 }
 
 .image-stack-overlay {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 65%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 65%;
 }
 
 .image-stack-overlay img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border: 8px solid #fff;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border: 8px solid #fff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
-.mission-description { flex: 1; }
-.gold-label { color: #c5a572; font-weight: bold; letter-spacing: 2px; font-size: 0.85rem; }
-.mission-description h2 { font-size: 2.5rem; color: #333; margin: 20px 0; font-family: 'Playfair Display', serif; }
+.mission-description {
+  flex: 1;
+}
+.gold-label {
+  color: #c5a572;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+.mission-description h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin: 20px 0;
+  font-family: "Playfair Display", serif;
+}
 
 .about-quote {
-    margin-top: 30px;
-    padding-left: 25px;
-    border-left: 3px solid #c5a572;
-    font-style: italic;
-    font-size: 1.1rem;
-    color: #555;
+  margin-top: 30px;
+  padding-left: 25px;
+  border-left: 3px solid #c5a572;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #555;
 }
 
 .section-title-center {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 40px;
-    letter-spacing: 3px;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 40px;
+  letter-spacing: 3px;
 }
 
 .lifestyle-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 250px);
-    gap: 15px;
-    max-width: 1200px;
-    margin: 0 auto 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 250px);
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto 100px;
 }
 
 .lifestyle-card.main-card {
-    grid-column: span 2;
-    background-color: #fdfaf7;
-    display: flex;
-    align-items: center;
-    padding: 40px;
-    font-size: 1.1rem;
-    line-height: 1.8;
+  grid-column: span 2;
+  background-color: #fdfaf7;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 
 .lifestyle-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
-    .hero-container, .mission-container { flex-direction: column; }
-    .hero-visual, .mission-images-grid { height: auto; }
-    .about-content-area { padding-top: 140px; }
-    .lifestyle-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-container,
+  .mission-container {
+    flex-direction: column;
+  }
+  .hero-visual,
+  .mission-images-grid {
+    height: auto;
+  }
+  .about-content-area {
+    padding-top: 140px;
+  }
+  .lifestyle-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

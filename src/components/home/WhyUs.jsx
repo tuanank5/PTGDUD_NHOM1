@@ -1,6 +1,5 @@
-//
-
 import "../../styles/home/WhyUs.css"; 
+
 export default function WhyUs() {
   const data = [
     { icon: "🚚", title: "GIAO HÀNG TOÀN QUỐC", desc: "Miễn phí cho đơn từ 1.000.000đ" },

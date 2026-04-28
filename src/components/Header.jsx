@@ -1,12 +1,10 @@
-//
-
-import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import "../styles/Header.css";
-import { FavoritesContext } from "../context/FavoritesContext";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import CartDrawer from "./CartDrawer";
 import { useCart } from "../context/CartContext";
+import { FavoritesContext } from "../context/FavoritesContext";
+import "../styles/Header.css";
+import CartDrawer from "./CartDrawer";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -102,4 +100,3 @@ export default function Header() {
     </>
   );
 }
-

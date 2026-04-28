@@ -1,6 +1,6 @@
-import { AuthContext } from "./AuthContext";
 import { useContext } from "react";
 import NotFound from "../components/NotFound";
+import { AuthContext } from "./AuthContext";
 
 export default function ProtectedRoute({ children, allowRoles }) {
   const { user } = useContext(AuthContext);

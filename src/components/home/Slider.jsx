@@ -1,5 +1,3 @@
-//
-
 import { useState, useEffect } from "react";
 import "../../styles/home/Slider.css";
 
@@ -37,6 +35,8 @@ export default function Slider() {
 
   return (
     <div className="slider-container">
+      <br />
+      <br />
       <div 
         className="slider-track"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}

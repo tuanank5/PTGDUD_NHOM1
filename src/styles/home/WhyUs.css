@@ -1,19 +1,19 @@
 .whyus {
-  background: #fdf9f3; 
-  padding: 0 0 60px 0; 
-  font-family: 'Arial', sans-serif;
-  margin-top: -40px; 
+  background: #fdf9f3;
+  padding: 0 0 60px 0;
+  font-family: "Arial", sans-serif;
+  margin-top: -40px;
 }
 
 .whyus-container {
-  max-width: 1890px; 
+  max-width: 1890px;
   margin: 0 auto;
-  padding: 0 90px; 
+  padding: 0 90px;
 }
 
 .whyus-inner {
   background: #ffffff;
-  padding: 25px 0; 
+  padding: 25px 0;
   border-radius: 12px;
   display: flex;
   justify-content: space-around;
@@ -60,12 +60,12 @@
 }
 .whyus {
   background: #fdf9f3;
-  padding-bottom: 20px; 
+  padding-bottom: 20px;
 }
 .why-content h4 {
   font-size: 13px;
   font-weight: 700;
-  color: #5C4033; 
+  color: #5c4033;
   margin: 0 0 3px 0;
   letter-spacing: 0.5px;
   text-transform: uppercase;

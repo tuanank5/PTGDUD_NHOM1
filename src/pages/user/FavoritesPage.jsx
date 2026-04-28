@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FavoritesContext } from "../../context/FavoritesContext";
 import Header from "../../components/Header";
+import { FavoritesContext } from "../../context/FavoritesContext";
 import "../../styles/FavoritesPage.css";
 
 import { useCart } from "../../context/CartContext";
@@ -78,4 +78,3 @@ export default function FavoritesPage() {
     </div>
   );
 }
-
