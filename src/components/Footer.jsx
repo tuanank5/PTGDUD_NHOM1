@@ -45,20 +45,23 @@ export default function Footer() {
 
           {/* CỘT 3: CHÍNH SÁCH KHÁCH HÀNG */}
           <div className="footer-col">
-            <h4 className="footer-title">THÀNH VIÊN NHÓM 1</h4>
+            <h4 className="footer-title">CHÍNH SÁCH</h4>
             <ul className="footer-links">
               <li>
-                <a href="#">Hồ Tấn An</a>
+                <a href="#">Chính sách giao hàng </a>
               </li>
               <li>
-                <a href="#">Nguyễn Gia An</a>
+                <a href="#">Chính sách đổi trả</a>
               </li>
               <li>
-                <a href="#">Nguyễn Thị Vân Anh</a>
+                <a href="#">Chính sách bảo mật</a>
               </li>
               <li>
-                <a href="#">Nguyễn Tuấn Anh</a>
+                <a href="#">Hướng dẫn mua hàng </a>
               </li>
+              <li>
+                <a href="#">Câu hỏi thường gặp</a>
+                </li>
             </ul>
           </div>
 
@@ -66,7 +69,7 @@ export default function Footer() {
           <div className="footer-col contact-col">
             <h4 className="footer-title">THÔNG TIN LIÊN HỆ</h4>
             <ul className="footer-contact">
-              <li>📍 123 Đường Fashion, Quận 1, TP. HCM</li>
+              <li>📍 Quận Gò Vấp, TP. HCM</li>
               <li>📞 Hotline: 0123 456 789</li>
               <li>✉️ Email: cskh@yourbrand.com</li>
             </ul>
