@@ -8,6 +8,8 @@ import ProtectedRoute from "./context/ProtectedRoute";
 import Dashboard from "./pages/admin/Dashboard";
 import ProductForm from "./pages/admin/ProductForm";
 import UserForm from "./pages/admin/UserForm";
+import OrdersManager from "./pages/admin/OrdersManager";
+import UsersManager from "./pages/admin/UsersManager";
 import AboutUs from "./pages/user/AboutUs";
 import CheckoutPage from "./pages/user/CheckoutPage";
 import FavoritesPage from "./pages/user/FavoritesPage";
@@ -93,10 +95,18 @@ function App() {
       ),
     },
     {
+      path: "/admin/orders",
+      element: (
+        <ProtectedRoute allowRoles={["admin"]}>
+          <OrdersManager />
+        </ProtectedRoute>
+      ),
+    },
+    {
       path: "/admin/users",
       element: (
         <ProtectedRoute allowRoles={["admin"]}>
-          <UserForm />
+          <UsersManager />
         </ProtectedRoute>
       ),
     },

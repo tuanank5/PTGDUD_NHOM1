@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { addUser, deleteUser, getUsers, updateUser } from "../../api/usersAPI";
+import {
+  addUser,
+  getUsers,
+  updateUser,
+} from "../../api/usersAPI";
 
 import Header from "./Header";
 
@@ -7,119 +11,186 @@ export default function UserForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
-  const [id, setId] = useState(null);
 
+  // id dùng để biết đang update user nào
+  const [editingId, setEditingId] = useState(null);
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    getUsers().then(setUsers);
+    loadUsers();
   }, []);
 
+  const loadUsers = async () => {
+    const data = await getUsers();
+    setUsers(data);
+  };
+
+  const resetForm = () => {
+    setUsername("");
+    setPassword("");
+    setRole("");
+    setEditingId(null);
+  };
+
   const handleSubmit = async () => {
+
     if (!username || !password || !role) {
       return alert("Vui lòng nhập đầy đủ thông tin!");
     }
 
-    const newUser = {
+    const userData = {
       username,
       password,
       role,
     };
 
-    if (id) {
-      const updated = await updateUser(id, newUser);
+    if (editingId !== null) {
+      const updatedUser = await updateUser(
+        editingId,
+        userData
+      );
 
-      setUsers((prev) => prev.map((u) => (u.id === id ? updated : u)));
-    } else {
-      const added = await addUser(newUser);
+      setUsers((prev) =>
+        prev.map((u) =>
+          u.id === editingId ? updatedUser : u
+        )
+      );
 
-      setUsers((prev) => [...prev, added]);
+      alert("Cập nhật tài khoản thành công!");
     }
 
-    setUsername("");
-    setPassword("");
-    setRole("");
-    setId(null);
+    else {
+      const addedUser = await addUser(userData);
 
-    alert(id ? "Cập nhật thành công" : "Thêm thành công");
+      setUsers((prev) => [...prev, addedUser]);
+
+      alert("Thêm tài khoản thành công!");
+    }
+
+    resetForm();
   };
 
-  const handleUpdate = (u) => {
-    setUsername(u.username);
-    setPassword(u.password);
-    setRole(u.role);
-    setId(u.id);
-  };
 
-  const handleDelete = async (id) => {
-    const confirmDelete = window.confirm("Bạn có chắc muốn xóa không?");
-    if (!confirmDelete) return;
+  const handleEdit = (user) => {
+    setUsername(user.username);
+    setPassword(user.password);
+    setRole(user.role);
 
-    await deleteUser(id);
-    setUsers((prev) => prev.filter((u) => u.id !== id));
+    setEditingId(user.id);
+
+    // kéo lên đầu trang
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
     <>
       <Header />
-      <br />
-      <br />
-      <br />
-      <div style={{ padding: 20 }}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <br />
 
-        <input
-          type="text"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <br />
+      <div style={{ padding: "30px" }}>
+        <h2>Quản lý tài khoản</h2>
 
-        <select value={role} onChange={(e) => setRole(e.target.value)}>
-          <option value="">-- Chọn role --</option>
-          <option value="admin">Admin</option>
-          <option value="user">User</option>
-        </select>
+        <div
+          style={{
+            marginTop: "20px",
+            marginBottom: "30px",
+          }}
+        >
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) =>
+              setUsername(e.target.value)
+            }
+            style={{
+              padding: "10px",
+              marginRight: "10px",
+            }}
+          />
 
-        <br />
-        <br />
-        <button onClick={handleSubmit}>{id ? "Cập nhật" : "Thêm"}</button>
+          <input
+            type="text"
+            placeholder="Password"
+            value={password}
+            onChange={(e) =>
+              setPassword(e.target.value)
+            }
+            style={{
+              padding: "10px",
+              marginRight: "10px",
+            }}
+          />
 
-        <hr />
+          <select
+            value={role}
+            onChange={(e) =>
+              setRole(e.target.value)
+            }
+            style={{
+              padding: "10px",
+              marginRight: "10px",
+            }}
+          >
+            <option value="">
+              -- Chọn role --
+            </option>
 
-        <table border="1" cellPadding="10" style={{ marginTop: 20 }}>
+            <option value="admin">
+              Admin
+            </option>
+
+            <option value="user">
+              User
+            </option>
+          </select>
+
+          <button onClick={handleSubmit}>
+            {editingId !== null
+              ? "Cập nhật"
+              : "Thêm"}
+          </button>
+        </div>
+
+        {/* =========================
+            TABLE
+        ========================= */}
+
+        <table
+          border="1"
+          cellPadding="10"
+          width="100%"
+        >
           <thead>
             <tr>
               <th>ID</th>
               <th>Username</th>
               <th>Password</th>
               <th>Role</th>
-              <th></th>
+              <th>Hành động</th>
             </tr>
           </thead>
 
           <tbody>
-            {users.map((u) => (
-              <tr key={u.id}>
-                <td>{u.id}</td>
-                <td>{u.username}</td>
-                <td>{u.password}</td>
-                <td>{u.role}</td>
+            {users.map((user) => (
+              <tr key={user.id}>
+                <td>{user.id}</td>
+
+                <td>{user.username}</td>
+
+                <td>{user.password}</td>
+
+                <td>{user.role}</td>
 
                 <td>
-                  <button onClick={() => handleUpdate(u)}>Cập nhật</button>
                   <button
-                    style={{ marginLeft: "10px" }}
-                    onClick={() => handleDelete(u.id)}
+                    onClick={() =>
+                      handleEdit(user)
+                    }
                   >
-                    Xóa
+                    Cập nhật
                   </button>
                 </td>
               </tr>

@@ -1,0 +1,184 @@
+/* =========================
+   DASHBOARD ADMIN
+========================= */
+
+.dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fb, #eef2ff);
+  padding: 40px 20px;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.dashboard-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #222;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.dashboard-title::after {
+  content: "";
+  width: 120px;
+  height: 5px;
+  border-radius: 20px;
+  background: linear-gradient(to right, #4a90e2, #8e44ad);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -15px;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.dashboard-features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.dashboard-feature-card {
+  width: 260px;
+  height: 260px;
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* ánh sáng */
+.dashboard-feature-card::before {
+  content: "";
+
+  position: absolute;
+  top: -120px;
+  left: -120px;
+
+  width: 220px;
+  height: 220px;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  border-radius: 50%;
+
+  transition: 0.5s;
+}
+
+.dashboard-feature-card:hover::before {
+  transform: scale(1.8);
+}
+
+/* hover card */
+.dashboard-feature-card:hover {
+  transform:
+    translateY(-12px)
+    scale(1.05)
+    rotate(-1deg);
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+/* click animation */
+.dashboard-feature-card:active {
+  transform: scale(0.96);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.dashboard-feature-img {
+  width: 95px;
+  height: 95px;
+  object-fit: cover;
+
+  border-radius: 50%;
+  border: 4px solid rgba(255,255,255,0.8);
+
+  margin-bottom: 22px;
+
+  animation: floating 3s ease-in-out infinite;
+
+  z-index: 2;
+}
+
+/* =========================
+   LABEL
+========================= */
+
+.dashboard-feature-label {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+
+  text-shadow: 0 3px 10px rgba(0,0,0,0.25);
+
+  z-index: 2;
+}
+
+/* =========================
+   FLOAT ANIMATION
+========================= */
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 2rem;
+  }
+
+  .dashboard-feature-card {
+    width: 210px;
+    height: 210px;
+  }
+
+  .dashboard-feature-img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .dashboard-feature-label {
+    font-size: 1rem;
+  }
+}
