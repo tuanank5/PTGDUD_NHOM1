@@ -16,6 +16,19 @@ export default function Header() {
   const { totalItems } = useCart();
 
   const [cartOpen, setCartOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = () => {
+    if (searchTerm.trim()) {
+     navigate(`/products?search=${encodeURIComponent(searchTerm.trim())}`);
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
 
   return (
     <>
@@ -30,7 +43,16 @@ export default function Header() {
             <span className="brand-sub">LUXURY BAGS</span>
           </div>
 
-         
+         <div className="search-luxury">
+            <input 
+              type="text" 
+              placeholder="Tìm kiếm sản phẩm..." 
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)} 
+              onKeyDown={handleKeyDown} 
+            />
+            <button className="btn-search-lux" onClick={handleSearch}>🔍</button>
+          </div>
 
           <div className="actions-luxury">
             <div

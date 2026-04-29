@@ -5,7 +5,6 @@ import { useCart } from "../context/CartContext";
 import { FavoritesContext } from "../context/FavoritesContext";
 import "../styles/ProductCategory.css";
 
-// PHẢI CÓ DÒNG NÀY ĐỂ ĐỊNH NGHĨA COMPONENT
 export default function ProductCategory() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,12 +12,7 @@ export default function ProductCategory() {
   const { addToCart } = useCart();
   const { favorites, toggleFavorite } = useContext(FavoritesContext);
 
-  // State cho filter
-  const [typeFilter, setTypeFilter] = useState({
-    "best-seller": false,
-    new: false,
-    normal: false,
-  });
+  const [typeFilter, setTypeFilter] = useState({ "best-seller": false, new: false, normal: false });
   const [sortPrice, setSortPrice] = useState("");
 
   useEffect(() => {
@@ -35,28 +29,27 @@ export default function ProductCategory() {
     fetchProducts();
   }, []);
 
-  // Lấy category từ query string
-  const params = new URLSearchParams(location.search);
-  const category = params.get("category");
+  const queryParams = new URLSearchParams(location.search);
+  const searchKeyword = queryParams.get("search")?.toLowerCase() || "";
+  const category = queryParams.get("category");
 
-  // Lọc sản phẩm theo category
-  let filteredProducts = category
-    ? products.filter((item) => item.category === category)
-    : products;
+  let displayProducts = products.filter((item) => {
+    // 1. Lọc theo tìm kiếm
+    const matchesSearch = item.name.toLowerCase().includes(searchKeyword);
+    // 2. Lọc theo danh mục (nếu có)
+    const matchesCategory = category ? item.category === category : true;
+    // 3. Lọc theo checkbox loại
+    const checkedTypes = Object.keys(typeFilter).filter((key) => typeFilter[key]);
+    const matchesType = checkedTypes.length > 0 ? checkedTypes.includes(item.type) : true;
 
-  // Lọc theo type
-  const checkedTypes = Object.keys(typeFilter).filter((key) => typeFilter[key]);
-  if (checkedTypes.length > 0) {
-    filteredProducts = filteredProducts.filter((item) =>
-      checkedTypes.includes(item.type),
-    );
-  }
+    return matchesSearch && matchesCategory && matchesType;
+  });
 
-  // Sắp xếp theo giá
+  // 4. Sắp xếp giá
   if (sortPrice === "asc") {
-    filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
+    displayProducts = [...displayProducts].sort((a, b) => a.price - b.price);
   } else if (sortPrice === "desc") {
-    filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);
+    displayProducts = [...displayProducts].sort((a, b) => b.price - a.price);
   }
 
   const handleTypeChange = (e) => {
@@ -64,100 +57,53 @@ export default function ProductCategory() {
     setTypeFilter((prev) => ({ ...prev, [name]: checked }));
   };
 
-  const handleSortChange = (e) => {
-    setSortPrice(e.target.value);
-  };
-
-  const handleFilterSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  if (loading) {
-    return <div className="loading">Đang tải sản phẩm...</div>;
-  }
+  if (loading) return <div className="loading">Đang tải...</div>;
 
   return (
     <div className="category-page">
       <div className="category-container">
         <aside className="filter-sidebar">
-          <form onSubmit={handleFilterSubmit}>
-            <div className="filter-section">
-              <h3 className="filter-main-title">Lọc theo loại</h3>
-              <div className="filter-group">
-                <label>
-                  <input
-                    type="checkbox"
-                    name="best-seller"
-                    checked={typeFilter["best-seller"]}
-                    onChange={handleTypeChange}
-                  />
-                  Best-seller
+           <h3 className="filter-main-title">Lọc theo loại</h3>
+           <div className="filter-group">
+              {["best-seller", "new", "normal"].map(type => (
+                <label key={type}>
+                  <input type="checkbox" name={type} checked={typeFilter[type]} onChange={handleTypeChange} />
+                  {type}
                 </label>
-                <label>
-                  <input
-                    type="checkbox"
-                    name="new"
-                    checked={typeFilter["new"]}
-                    onChange={handleTypeChange}
-                  />
-                  New
-                </label>
-                <label>
-                  <input
-                    type="checkbox"
-                    name="normal"
-                    checked={typeFilter["normal"]}
-                    onChange={handleTypeChange}
-                  />
-                  Normal
-                </label>
-              </div>
-            </div>
-            <div className="filter-section">
-              <h3 className="filter-main-title">Sắp xếp theo giá</h3>
-              <select value={sortPrice} onChange={handleSortChange}>
-                <option value="">-- Chọn --</option>
-                <option value="asc">Giá tăng dần</option>
-                <option value="desc">Giá giảm dần</option>
-              </select>
-            </div>
-            <button className="btn-apply-filter" type="submit">
-              Lọc
-            </button>
-          </form>
+              ))}
+           </div>
+           <h3 className="filter-main-title">Giá</h3>
+           <select value={sortPrice} onChange={(e) => setSortPrice(e.target.value)}>
+              <option value="">-- Sắp xếp --</option>
+              <option value="asc">Thấp đến Cao</option>
+              <option value="desc">Cao đến Thấp</option>
+           </select>
         </aside>
 
         <main className="product-content">
-          <h2 className="page-title">Danh Mục Sản Phẩm</h2>
+          <h2 className="page-title">
+            {searchKeyword ? `Kết quả tìm kiếm cho: "${searchKeyword}"` : "Tất cả sản phẩm"}
+          </h2>
           <div className="product-grid-category">
-            {filteredProducts.map((item) => (
-              <div className="product-card-luxury" key={item.id}>
-                <div className="product-img-box">
-                  <div className="badge-new">{item.type}</div>
-                  <img src={item.image} alt={item.name} />
-                  <button
-                    className={`heart-btn ${favorites.some((f) => f.id === item.id) ? "active" : ""}`}
-                    onClick={() => toggleFavorite(item)}
-                  >
-                    {favorites.some((f) => f.id === item.id) ? "❤️" : "🤍"}
-                  </button>
+            {displayProducts.length > 0 ? (
+              displayProducts.map((item) => (
+                <div className="product-card-luxury" key={item.id}>
+                  <div className="product-img-box">
+                    <img src={item.image} alt={item.name} />
+                    <button className="heart-btn" onClick={() => toggleFavorite(item)}>
+                      {favorites.some((f) => f.id === item.id) ? "❤️" : "🤍"}
+                    </button>
+                  </div>
+                  <div className="product-info-box">
+                    <h3 className="product-name">{item.name}</h3>
+                    <p className="product-price">{item.price?.toLocaleString()}đ</p>
+                    <button className="btn-add-to-cart" onClick={() => addToCart(item)}>Thêm vào giỏ hàng</button>
+                  </div>
                 </div>
-
-                <div className="product-info-box">
-                  <h3 className="product-name">{item.name}</h3>
-                  <p className="product-quantity">Số lượng : {item.quantity}</p>
-                  <p className="product-price">
-                    {item.price?.toLocaleString()} VND
-                  </p>
-                  <button
-                    className="btn-add-to-cart"
-                    onClick={() => addToCart(item)}
-                  >
-                    Thêm vào giỏ hàng
-                  </button>
-                </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <p className="no-result">Không tìm thấy sản phẩm nào.</p>
+            )}
           </div>
         </main>
       </div>
